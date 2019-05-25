@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[archive]]></title>
-    <url>%2F2019%2F05%2F25%2Farchive%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[categories]]></title>
-    <url>%2F2019%2F05%2F25%2Fcategories%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[tags]]></title>
-    <url>%2F2019%2F05%2F25%2Ftags%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[MyFirstblog]]></title>
     <url>%2F2019%2F05%2F25%2FMy-First-blog%2F</url>
     <content type="text"><![CDATA[我的第一条博客人呐，总有那么一瞬间，想把身边所经历、所学习、所感悟给写下来，埋在某个地方。以前，我会以日记的形式记录自己的感悟，但是而我，选择了搭建一个自己的博客，将这些东西埋藏在这。 vi]]></content>
