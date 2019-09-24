@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F09%2F24%2F2019-09-24%2F</url>
+    <content type="text"><![CDATA[#用Mweb和hexo配合管理博客test]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Keybord Maestro 使用技巧]]></title>
     <url>%2F2019%2F09%2F04%2FKeybord-Maestro-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%2F</url>
     <content type="text"><![CDATA[Keybord Maestro 使用技巧 ##简介 什么是Keybord Maestro?（以下简称KM） Keyboard Maestro is the leading software for Mac OS X automation. It will increase business productivity by using macros(or short cuts) with simple keystrokes. 这是&lt;a href=”https://www.keyboardmaestro.com/main/ target=”_blank”&gt;Keyboard Maestro官网的介绍,对于Mac来说，这绝对是一大效率神器！ Keyboard Maestro能做什么？这就是这篇文章要带给你的。 ##1. 窗口管理Mac上窗口管理的软件非常多，例如非常有名的Magent，但是，这些软件都只有窗口管理一个功能，而且不如KM灵活。下面是我自己的配置，分别是居中、全屏、左上、右上、左下、右下几个位置，对应的快捷键可以自己设置，比如我的“居中”就是Command+Control+H：简单几步配置，开始使用吧！]]></content>
