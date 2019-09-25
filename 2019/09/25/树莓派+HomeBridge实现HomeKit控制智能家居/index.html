@@ -97,18 +97,19 @@
 
 
   <meta name="description" content="米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“电视.app“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个HomeBridge项目，通过树莓派做桥接，实现Siri控制米家智能设备。">
+<meta name="keywords" content="树莓派">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派+HomeBridge实现HomeKit控制智能家居">
 <meta property="og:url" content="http://yoursite.com/2019/09/25/树莓派+HomeBridge实现HomeKit控制智能家居/index.html">
 <meta property="og:site_name" content="Gray&#39;s Blog">
 <meta property="og:description" content="米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“电视.app“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个HomeBridge项目，通过树莓派做桥接，实现Siri控制米家智能设备。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90 “树莓派3B+”">
-<meta property="og:updated_time" content="2019-09-25T11:06:34.620Z">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90">
+<meta property="og:updated_time" content="2019-09-25T11:22:46.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派+HomeBridge实现HomeKit控制智能家居">
 <meta name="twitter:description" content="米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“电视.app“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个HomeBridge项目，通过树莓派做桥接，实现Siri控制米家智能设备。">
-<meta name="twitter:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90 “树莓派3B+”">
+<meta name="twitter:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90">
 
 
 
@@ -397,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-09-25 18:41:45 / 修改时间：19:06:34" itemprop="dateCreated datePublished" datetime="2019-09-25T18:41:45+08:00">2019-09-25</time>
+              <time title="创建时间：2019-09-25 18:41:45 / 修改时间：19:22:46" itemprop="dateCreated datePublished" datetime="2019-09-25T18:41:45+08:00">2019-09-25</time>
             
 
             
@@ -446,8 +447,19 @@
 <li><p>任意一个或多个支持 HomeKit 的设备：小米智能插座 ZigBee 版、小米人体传感器、小米门窗传感器、小米温湿度传感器、Yeelight智能灯泡、 Aqara墙壁开关等</p>
 </li>
 <li>树莓派 Raspberry Pi 3B+ （包含读卡器 &amp; 8 Gb 以上 TF 内存卡一张）</li>
-<li>Macbook一台（当然，win也可以）<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90 “树莓派3B+”" alt="树莓派"></li>
+<li>Mac Book一台（当然，win也可以） <br><br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90" alt="树莓派"><center>树莓派3B+</center></li>
 </ul>
+<p>##二、GitHub项目地址</p>
+<ul>
+<li><a href="https://github.com/nfarina/homebridge" target="_blank" rel="noopener">HomeBridge</a></li>
+<li><a href="https://github.com/YinHangCode/homebridge-mi-aqara" target="_blank" rel="noopener">homebridge-mi-aqara</a></li>
+</ul>
+<p>##三、开始吧</p>
+<ol>
+<li>关于树莓派的安装和打开ssh可以先移步<a href="https://blog.csdn.net/u012313335/article/details/53405734" target="_blank" rel="noopener">系统烧录</a>和<a href="https://blog.csdn.net/u012313335/article/details/73920256" target="_blank" rel="noopener">打开ssh</a>；</li>
+<li>跟新gcc（可以使用pi用户也可以使用root用户，使用pi用户涉及权限问题请加sudo）<br><br><code>sudo apt-get install gcc</code></li>
+<li>接下来安装 NodeJS，如果你发现速度很慢，你可能需要更改中国软件源，参考文章：Raspbian <a href="http://shumeipai.nxez.com/2013/08/31/raspbian-chinese-software-source.html" target="_blank" rel="noopener">中国软件源</a>,阿里云各个地方速度都不错。</li>
+</ol>
 
       
     </div>
@@ -468,6 +480,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/树莓派/" rel="tag"># 树莓派</a>
+          
+        </div>
       
 
       
@@ -592,7 +610,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
