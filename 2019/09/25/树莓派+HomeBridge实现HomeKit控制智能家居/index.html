@@ -105,7 +105,9 @@
 <meta property="og:description" content="米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“电视.app“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个HomeBridge项目，通过树莓派做桥接，实现Siri控制米家智能设备。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90">
-<meta property="og:updated_time" content="2019-09-25T11:22:46.504Z">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019-09-25%2F1569411561.png">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/15694117001892.jpg?image/auto-orient,1/resize,p_89/quality,q_90">
+<meta property="og:updated_time" content="2019-09-25T11:54:42.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派+HomeBridge实现HomeKit控制智能家居">
 <meta name="twitter:description" content="米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“电视.app“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个HomeBridge项目，通过树莓派做桥接，实现Siri控制米家智能设备。">
@@ -398,7 +400,7 @@
                 
               
 
-              <time title="创建时间：2019-09-25 18:41:45 / 修改时间：19:22:46" itemprop="dateCreated datePublished" datetime="2019-09-25T18:41:45+08:00">2019-09-25</time>
+              <time title="创建时间：2019-09-25 18:41:45 / 修改时间：19:54:42" itemprop="dateCreated datePublished" datetime="2019-09-25T18:41:45+08:00">2019-09-25</time>
             
 
             
@@ -458,8 +460,17 @@
 <ol>
 <li>关于树莓派的安装和打开ssh可以先移步<a href="https://blog.csdn.net/u012313335/article/details/53405734" target="_blank" rel="noopener">系统烧录</a>和<a href="https://blog.csdn.net/u012313335/article/details/73920256" target="_blank" rel="noopener">打开ssh</a>；</li>
 <li>跟新gcc（可以使用pi用户也可以使用root用户，使用pi用户涉及权限问题请加sudo）<br><br><code>sudo apt-get install gcc</code></li>
-<li>接下来安装 NodeJS，如果你发现速度很慢，你可能需要更改中国软件源，参考文章：Raspbian <a href="http://shumeipai.nxez.com/2013/08/31/raspbian-chinese-software-source.html" target="_blank" rel="noopener">中国软件源</a>,阿里云各个地方速度都不错。</li>
+<li>接下来依次安装，如果你发现速度很慢，你可能需要更改中国软件源，参考文章：Raspbian <a href="http://shumeipai.nxez.com/2013/08/31/raspbian-chinese-software-source.html" target="_blank" rel="noopener">中国软件源</a>,阿里云各个地方速度都不错。<br><br><strong>a. 安装nodejs：</strong><br><br><code>sudo apt-get update</code><br><code>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</code><br><code>sudo apt-get install -y nodejs</code><br><code>sudo apt-get install -y build-essential</code><br><br><strong>b. 安装avahi：</strong><br><br><code>sudo apt-get install libavahi-compat-libdnssd-dev</code><br><br><strong>c. 安装HomeBridge：</strong><br><br><code>sudo npm install -g --unsafe-perm homebridge</code><br><br><strong>d. 安装homebridge-aqara：</strong><br><br><code>sudo npm install -g homebridge-aqara</code><br><br>安装部分完成！</li>
+<li>新建和配置config.json文件<br>返回主目录→创建” .homebridge “文件夹→进入” config.json “文件）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~ </span><br><span class="line">mkdir .homebridge</span><br><span class="line">vim .homebridge/config.json</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p><br>复制以下代码稍作修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    &quot;bridge&quot;: &#123;</span><br><span class="line"></span><br><span class="line">        &quot;name&quot;: &quot;Homebridge&quot;,</span><br><span class="line"></span><br><span class="line">        &quot;username&quot;: &quot;CC:22:3D:E3:CE:30&quot;,</span><br><span class="line"></span><br><span class="line">        &quot;port&quot;: 51826,</span><br><span class="line"></span><br><span class="line">        &quot;pin&quot;: &quot;031-45-154&quot;</span><br><span class="line"></span><br><span class="line">    &#125;, </span><br><span class="line"></span><br><span class="line">    &quot;platforms&quot;: [&#123;</span><br><span class="line"></span><br><span class="line">        &quot;platform&quot;: &quot;AqaraPlatform&quot;,</span><br><span class="line"></span><br><span class="line">        &quot;sid&quot;: [&quot;【（密码A）网关MAC地址，去掉冒号，全部小写】&quot;],</span><br><span class="line"></span><br><span class="line">        &quot;password&quot;: [&quot;【（密码B）网关局域网密码】&quot;]</span><br><span class="line"></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><br>其中 name 是你在 iOS 家庭 App 上可以看到的桥接器的名字，建议就叫 Homebridge，username 需要是类似 MAC 的格式，是可以随意填写，只要符合格式，建议不需要更改了。port 随意，确保不要被占用。pin 随意，为密码，需要是 8 位数字，格式为 xxx-xx-xxx，比如 123-45-678。下面的 platform 也是无所谓修改不修改，关键是<strong>sid</strong>和<strong>password</strong>，这就需要在手机上操作了。<br>在手机上打开米家 App，点击你的网关，右上角三个 ···，并狂按底部空白区域，直到出现局域网通信协议和网管信息为止。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019-09-25%2F1569411561.png" alt><br>点击局域网通信协议，打开，并刷新一个密码，改为全部小写，（安卓手机刷出来是小写），记录这段文字（密码 A ）。<br><br>点击网关信息，找到 mac: 后的文字，如本截图中的 28:6C:07:85:B3:0E，去掉 : 并全部改为小写，也记录这段文字（密码 B ），如本截图中的文字处理后的结果就是 f0b429cc6168。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/15694117001892.jpg?image/auto-orient,1/resize,p_89/quality,q_90" alt><br>第一个密码 A 就是你的 sid，第二个密码 B 就是 password。如果你有多个网关用逗号链接，比如 cb30a01c1bcc4b3c, dc41b12d2cdd5c4d, password 同理。在刚刚树莓派编辑的 config.json 输入上面获得的密码，保存退出。（vim的使用自行Google）</p>
+<ol>
+<li>运行homebridge<br>直接在命令行输入<code>homebridge</code>就能运行；有时出现错误会自动关闭，错误原因有很多，一般就是端口占用，或者mac地址和密码填写错误，仔细检查，如果不行的话，清除缓存，删除连接信息重新运行homebridge：<br><strong>操作方法</strong><br>a. 结束HomeBridge进程，如下：<br><code>pkill -9 homebridge</code><br>b. 进入config.json所在的文件夹，例如：<br><code>cd /root/.homebridge</code><br>c. 删除文件夹下persist文件夹，例如：<br><code>rm -rf persist</code><br>d. 重启Homebridge进程，例如：<br><code>homebridge</code><br>掏出iPhone，打开家庭app，点击添加配件，扫描二维码或者手动输入你设置的八位密码就可以配对成功，操作完成。</li>
+<li>最后的最后，你会发现，HomeBridge 停止运行了。我们不可能在电脑上挂着终端使树莓派一直运行这个服务，因此还有最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。事实上, 树莓派文档 Scheduling tasks with Cron 给出的方法是最简单并且方便以后配置别的程序。<br>先安装 cron<br><code>sudo apt-get install gnome-schedule</code><br>然后配置 cron.<br><code>crontab -e</code><br>在最下方添加<code>@reboot homebridge &amp;</code>即可完成开机启动 homebridge 的配置。<br>现在，你可以重启一下树莓派，运行<code>ps -ef | grep homebridge</code>看看 HomeBridge 服务是否正常运行.</li>
+</ol>
+<p>最后来感叹一下apple的生态系统，当我成功配置后，我能够在iPhone、ipad、mac、甚至是Apple Watch上控制小米家居，实在激动。</p>
 
       
     </div>
