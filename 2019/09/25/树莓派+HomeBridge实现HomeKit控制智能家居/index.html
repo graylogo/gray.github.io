@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90">
 <meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019-09-25%2F1569411561.png">
 <meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/15694117001892.jpg?image/auto-orient,1/resize,p_89/quality,q_90">
-<meta property="og:updated_time" content="2019-09-25T14:37:53.883Z">
+<meta property="og:updated_time" content="2019-10-07T03:02:39.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派+HomeBridge实现HomeKit控制智能家居">
 <meta name="twitter:description" content="米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“电视.app“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个HomeBridge项目，通过树莓派做桥接，实现Siri控制米家智能设备。">
@@ -400,12 +400,24 @@
                 
               
 
-              <time title="创建时间：2019-09-25 18:41:45 / 修改时间：22:37:53" itemprop="dateCreated datePublished" datetime="2019-09-25T18:41:45+08:00">2019-09-25</time>
+              <time title="创建时间：2019-09-25 18:41:45" itemprop="dateCreated datePublished" datetime="2019-09-25T18:41:45+08:00">2019-09-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-07 11:02:39" itemprop="dateModified" datetime="2019-10-07T11:02:39+08:00">2019-10-07</time>
               
             
           </span>
@@ -473,6 +485,7 @@
 <li>最后的最后，你会发现，HomeBridge 停止运行了。我们不可能在电脑上挂着终端使树莓派一直运行这个服务，因此还有最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。事实上, 树莓派文档 Scheduling tasks with Cron 给出的方法是最简单并且方便以后配置别的程序。<br>先安装 cron<br><code>sudo apt-get install gnome-schedule</code><br>然后配置 cron.<br><code>crontab -e</code><br>在最下方添加<code>@reboot homebridge &amp;</code>即可完成开机启动 homebridge 的配置。<br>现在，你可以重启一下树莓派，运行<code>ps -ef | grep homebridge</code>看看 HomeBridge 服务是否正常运行.</li>
 </ol>
 <p>最后来感叹一下apple的生态系统，当我成功配置后，我能够在iPhone、ipad、mac、甚至是Apple Watch上控制小米家居，实在激动。</p>
+<p><strong>注意</strong>：树莓派必须通过网线连接，不能通过Wi-Fi连接！</p>
 <h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://www.jianshu.com/p/ec79b2711bd5" target="_blank" rel="noopener">树莓派进阶（一）：借助树莓派与 HomeBridge，从米家到 HomeKit</a><br><a href="https://sspai.com/post/38358" target="_blank" rel="noopener">从米家到 HomeKit，你只需要一个树莓派</a><br><a href="https://homekit.loli.ren/docs/show/3" target="_blank" rel="noopener">HomeBridge教程 </a></p>
 
       
