@@ -96,14 +96,22 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="在用SpeingBoot做邮箱验证的时候，需要用到`Redis，所以在Mac和CentOs中都安装了redis5.0.8：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac安装Redis5.0.8">
+<meta property="og:url" content="http://yoursite.com/2020/05/16/Mac安装Redis5-0-8/index.html">
 <meta property="og:site_name" content="Gray&#39;s Blog">
+<meta property="og:description" content="在用SpeingBoot做邮箱验证的时候，需要用到`Redis，所以在Mac和CentOs中都安装了redis5.0.8：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-25T05:46:53.000Z">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045020.png">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045716.png">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045936.png">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-050301.png">
+<meta property="og:updated_time" content="2020-05-16T05:08:50.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Mac安装Redis5.0.8">
+<meta name="twitter:description" content="在用SpeingBoot做邮箱验证的时候，需要用到`Redis，所以在Mac和CentOs中都安装了redis5.0.8：">
+<meta name="twitter:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045020.png">
 
 
 
@@ -111,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2020/05/16/Mac安装Redis5-0-8/">
 
 
 
@@ -121,7 +129,7 @@
   };
 </script>
 
-  <title>categories | Gray's Blog</title>
+  <title>Mac安装Redis5.0.8 | Gray's Blog</title>
   
 
 
@@ -241,7 +249,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -287,25 +295,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -354,62 +343,181 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/16/Mac安装Redis5-0-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gray">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gray's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">categories
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
+          <h1 class="post-title" itemprop="name headline">Mac安装Redis5.0.8
+
               
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 2 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/思考/">思考</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-05-16 12:38:27 / 修改时间：13:08:50" itemprop="dateCreated datePublished" datetime="2020-05-16T12:38:27+08:00">2020-05-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>在用SpeingBoot做邮箱验证的时候，需要用到`Redis，所以在Mac和CentOs中都安装了redis5.0.8：</p>
+<a id="more"></a>
+<h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h4><p>redis<a href="https://redis.io" target="_blank" rel="noopener">下载地址</a>，选择download，然后可以看到5.0.8的安装包：</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045020.png" alt="Screen Shot 2020-05-16 at 12.49.14"></p>
+<p>或者，可以通过wget安装<code>wget http://download.redis.io/releases/redis-5.0.8.tar.gz</code></p>
+<h4 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h4><ul>
+<li><p>解压到安装目录<code>tar zxvf redis-5.0.8.tar.gz /usr/local</code></p>
+<blockquote>
+<p>注意，如果没有权限请加上sudo</p>
+</blockquote>
+</li>
+<li><p>切换到解压好的目录<code>cd /usr/local/redis-5.0.8</code>，执行make命令，大概两分钟后安装完成</p>
+</li>
+<li><p>执行<code>make install</code>，作用是在<code>/usr/local/bi</code>n里产生一些文件(命令)，比如<code>redis-server</code>、<code>redis-cli</code>等，如果不执行make install，那么键入启动服务命令redis-server时会提示“该命令不存在”，redis服务就无法启动。我们查看一下：</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045716.png" alt="image-20200516125715391"></p>
+</li>
+</ul>
+<h4 id="3-修改配置文件redis-conf"><a href="#3-修改配置文件redis-conf" class="headerlink" title="3. 修改配置文件redis.conf"></a>3. 修改配置文件redis.conf</h4><p>修改redis.conf，将GENERAL里的no改成yes（默认redis.conf里守护进程没有被开启）</p>
+<p>(注：这个配置文件可能在 /usr/redis/redis-5.0.8/redis.conf，或者/etc/redis.conf)</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045936.png" alt="image-20200516125936103"></p>
+<h4 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h4><p>执行<code>to redis-server /usr/local/redis-5.0.8/redis.conf</code>加载配置文件，可以在bash配置文件里重命名一下，<code>alias redis=&#39;redis-server /usr/local/redis-5.0.8/redis.conf&#39;</code>，查看结果：配置文件已经加载；</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-050301.png" alt="image-20200516130301891"></p>
+<p>加载配置文件后，启动客户端<code>redis-cli</code> </p>
+<p>退出的话先执行shutdown再exit即可</p>
+<h4 id="5-uer-local权限问题"><a href="#5-uer-local权限问题" class="headerlink" title="5. /uer/local权限问题"></a>5. /uer/local权限问题</h4><p>默认安装以后，在Mac系统中就算是sudo用户也没有访问redis权限，退出的时候提示没有权限保存<code>saving: Permission denied</code>，手动修改一下文件夹权限<code>sudo chown -R $(whoami) /usr/local/redis-5.0.8</code>，👌</p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/03/提问的智慧/" rel="next" title="提问的智慧">
+                <i class="fa fa-chevron-left"></i> 提问的智慧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -438,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -529,6 +646,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-下载"><span class="nav-number">1.</span> <span class="nav-text">1. 下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装"><span class="nav-number">2.</span> <span class="nav-text">2. 安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-修改配置文件redis-conf"><span class="nav-number">3.</span> <span class="nav-text">3. 修改配置文件redis.conf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-启动服务"><span class="nav-number">4.</span> <span class="nav-text">4. 启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-uer-local权限问题"><span class="nav-number">5.</span> <span class="nav-text">5. /uer/local权限问题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
