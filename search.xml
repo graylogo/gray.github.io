@@ -29,7 +29,7 @@
   <entry>
     <title><![CDATA[Ubuntu16.04.4安装与优化]]></title>
     <url>%2F2020%2F02%2F15%2FUbuntu16-04-4%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%98%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[由于我的 acer 不争气，好不容易装好的系统，关机以后自检找不到系统了，所以这篇文章暂时搁置，等我有了一台能顺利跑Ubuntu的电脑再来填坑。 ###没错，这篇文章就是被搁置了。 2020-02-16 随手放一些效果图，很Mac有没有？ 桌面效果图 下载主题包，链接:https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ 密码:a9ne,根据文档内容放入对应文件夹 安装gnome-tweak-tool,然后打开tweak工具，]]></content>
+    <content type="text"><![CDATA[由于我的 acer 不争气，好不容易装好的系统，关机以后自检找不到系统了，所以这篇文章暂时搁置，等我有了一台能顺利跑Ubuntu的电脑再来填坑。 没错，这篇文章就是被搁置了。 2020-02-16随手放一些效果图，很Mac有没有？ 桌面效果图 下载主题包，链接:https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ 密码:a9ne,根据文档内容放入对应文件夹 安装gnome-tweak-tool,然后打开tweak工具， 在安装Ubuntu的过程中，发现我的老电脑不堪重负，崩了。。。。打算组装一台itx主机来装Linux]]></content>
   </entry>
   <entry>
     <title><![CDATA[VsCode教程]]></title>
@@ -68,6 +68,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[MarkDown语法简记]]></title>
+    <url>%2F2019%2F07%2F18%2FMarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[常用的MarkDown语法 初识MarkDown作为一个未来的码农，越早接触这一语法越好。毕竟我是拿来来练习打字速度的（手动滑稽）。 列表（注意中间需要空格）1231. 这是第一点2. 这是第二点- 前面一个点 显示效果： 这是第一点 这是第二点 前面一个点 重点12345**加粗***斜体*~~删除线~~ (注意这是英文键盘下的~)**注意**：当需要打出*时，在前面加入\即可&gt;这是用来 \*演示\* 的 \_文本\_ 效果：加粗斜体删除线 (注意这是英文键盘下的~)注意：当需要打出*时，在前面加入\即可 这是用来 *演示* 的 _文本_ 代码片段或者使用`代码片段` if(a=b) 分隔符123***---___ 效果： 超链接(需要用英文括号)Google以下是中文括号显示效果：[Google]（http://www.google.com/） 图片插入图片的格式和插入超链接语法基本一致，只不过需要在前面加一个英文！1![GitHub](https://avatars2.githubusercontent.com/u/3265208?v=3&amp;s=100 "GitHub,Social Coding") 代码块用前后各三个点来包含多行代码，在第一个三点后面加入代码的语言就可以高亮显示关键词：123456#include&lt;stdio.h&gt;int main()&#123;print("a\n");return 0;&#125; 表格1使用 | 来分隔不同的单元格，使用 ---来分隔表头和其它行 1234name | age--- | ---LearnShare | 12Mike | 32 效果： name age LearnShare 12 Mike 32]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[通过Hexo + Github 搭建博客]]></title>
+    <url>%2F2019%2F05%2F25%2F%E9%80%9A%E8%BF%87Hexo-Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[最近学习压力很大，想起了这个被搁置一年的博客计划，正好看到了Hexo搭建的萤火之森页面，真的很漂亮，于是决定动手自己搭建一个。这篇文章正好记录一下搭建过程中遇到的问题，方便以后学习。 hexo 基础命令1234hexo g == hexo generate 生成hexo d == hexo deploy 部署hexo s == hexo serverhexo n == hexo new 遇到的问题1. Github密匙只读2. hexo s 显示4000端口不能用解决方法：在Blog的根目录下，修改_config.ynl文件，在最后加上：1234server: port: 4001 #注意port前有Tab键 冒号后有空格 compress: true header: true 花费的时间总的算下来，总共花了我四个小时左右的时间来搭建这个博客，当然，这仅仅是搭建了基础的框架，后期还需要大量的时间来美化，不过鉴于最近考试太忙，估计得延期一段时间了。 为什么要需要这个博客？一年前，我用阿里云镜像一键搭建了基于Wordpress的个人博客，但是由于拖更，导致兴趣越来越少，最后也就不了了之了。从这段历程中，我感受到了，不是自己努力来的结果自己真是不懂得珍惜，这一个花费我一晚上心血建立的Blog，我可要好好监督自己，不要荒废了。其实，挺羡慕那些能在各种论坛分享自己知识的人，帮助别人的同时也能留下自己的足迹，最重要的是，在这个过程中，能找到归属感与成就感，这就是分享的意义吧。很大一部分人，写的都是技术博客，但是我知道自己现在能力有限，输出不了太多的干货，所以，现在这个阶段，更多的是记录一些学习笔记，当然，我也想穿插一些自己的心里话，写一下每个阶段的感悟。 搭建过程让我学到了什么搭建过程虽然烦琐，但我确乐在其中，兴趣是最好的老师，在搭建过程中，我看到了很多感兴趣的技术，比如GitHub的代码托管（很早以前我就注册了GitHub账号，但是一直没有项目来练习），比如Node.js，看到漂亮的网页，不眠不免对前端心生向往，再比如最近一直在学习的Linux命令行，现我已经迫不及待想要用shell自己写一个一键部署脚本了。 给自己立下Flag我的脑海里会迸发出很多新计划，但是最后很多都是不了了之，因为没有去实现，所以，在这里，我要给自己定几个目标： 每个月至少来更新一篇博客，不管是什么类型的。 尽快掌握MarkDown与法，写出排版漂亮的文章。 将我的小站好好维护下去，做一些优化。 开始GitHub的学习 关于我我觉得我很有想法，但是想到和做到之间，有一块透明的玻璃挡在我的面前，它看不见，但是它真实存在，而现在我要做的，就是想办法用行动突破它！在脑海里的话语，写在纸面上就是另外一番模样，说白了，我需要练习自己的写作能力了，多年后，看到这青涩的文字，嘴角应该会有一丝微笑吧。]]></content>
+      <categories>
+        <category>思考</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F05%2F25%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
@@ -79,20 +101,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[通过Hexo + Github 搭建博客]]></title>
-    <url>%2F2019%2F05%2F25%2F%E9%80%9A%E8%BF%87Hexo-Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[最近学习压力很大，想起了这个被搁置一年的博客计划，正好看到了Hexo搭建的萤火之森页面，真的很漂亮，于是决定动手自己搭建一个。这篇文章正好记录一下搭建过程中遇到的问题，方便以后学习。 遇到的问题1. Github密匙只读2. hexo s 显示4000端口不能用解决方法：在Blog的根目录下，修改_config.ynl文件，在最后加上：1234server: port: 4001 #注意port前有Tab键 冒号后有空格 compress: true header: true 花费的时间总的算下来，总共花了我四个小时左右的时间来搭建这个博客，当然，这仅仅是搭建了基础的框架，后期还需要大量的时间来美化，不过鉴于最近考试太忙，估计得延期一段时间了。 为什么要需要这个博客？一年前，我用阿里云镜像一键搭建了基于Wordpress的个人博客，但是由于拖更，导致兴趣越来越少，最后也就不了了之了。从这段历程中，我感受到了，不是自己努力来的结果自己真是不懂得珍惜，这一个花费我一晚上心血建立的Blog，我可要好好监督自己，不要荒废了。其实，挺羡慕那些能在各种论坛分享自己知识的人，帮助别人的同时也能留下自己的足迹，最重要的是，在这个过程中，能找到归属感与成就感，这就是分享的意义吧。很大一部分人，写的都是技术博客，但是我知道自己现在能力有限，输出不了太多的干货，所以，现在这个阶段，更多的是记录一些学习笔记，当然，我也想穿插一些自己的心里话，写一下每个阶段的感悟。 搭建过程让我学到了什么搭建过程虽然烦琐，但我确乐在其中，兴趣是最好的老师，在搭建过程中，我看到了很多感兴趣的技术，比如GitHub的代码托管（很早以前我就注册了GitHub账号，但是一直没有项目来练习），比如Node.js，看到漂亮的网页，不眠不免对前端心生向往，再比如最近一直在学习的Linux命令行，现我已经迫不及待想要用shell自己写一个一键部署脚本了。 给自己立下Flag我的脑海里会迸发出很多新计划，但是最后很多都是不了了之，因为没有去实现，所以，在这里，我要给自己定几个目标： 每个月至少来更新一篇博客，不管是什么类型的。 尽快掌握MarkDown与法，写出排版漂亮的文章。 将我的小站好好维护下去，做一些优化。 开始GitHub的学习 关于我我觉得我很有想法，但是想到和做到之间，有一块透明的玻璃挡在我的面前，它看不见，但是它真实存在，而现在我要做的，就是想办法用行动突破它！在脑海里的话语，写在纸面上就是另外一番模样，说白了，我需要练习自己的写作能力了，多年后，看到这青涩的文字，嘴角应该会有一丝微笑吧。]]></content>
-      <categories>
-        <category>思考</category>
-      </categories>
-      <tags>
-        <tag>感悟</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[用Mweb发布Hexo博客]]></title>
     <url>%2F2019%2F04%2F10%2Ftest%2F</url>
-    <content type="text"><![CDATA[测试一下图床功能]]></content>
+    <content type="text"><![CDATA[测试一下七牛云图床功能 测试阿里云图床功能能够正常上传图片]]></content>
       <categories>
         <category>测试</category>
       </categories>
