@@ -109,7 +109,9 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006y8mN6ly1g6ntkgz4dtj318u0u0jwh.jpg">
 <meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019-09-25%2F1569419642.png">
 <meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/15694199196130.jpg?image/auto-orient,1/resize,p_89/quality,q_90">
-<meta property="og:updated_time" content="2020-02-11T12:09:46.000Z">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2020-10/2020-10-18-%E5%89%8D%E5%90%8E%E5%AF%B9%E6%AF%94%E5%9B%BE2.png">
+<meta property="og:image" content="http://gray.oss-cn-beijing.aliyuncs.com/2020-10/2020-10-18-%E5%89%8D%E5%90%8E%E5%AF%B9%E6%AF%94%E5%9B%BE.png">
+<meta property="og:updated_time" content="2020-10-20T10:24:00.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac上常用的软件&amp;插件">
 <meta name="twitter:description" content="前几天忍不住升级了Catalina beat 10.15版，后来ruby环境崩溃，Final cut pro、iMovie也用不了，苦不堪言，最终在没有备份的前提下降级到Mojave……正好从头折腾一下Mac电脑，顺便整理一下这几年常用的软件和插件。">
@@ -419,7 +421,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-02-11 20:09:46" itemprop="dateModified" datetime="2020-02-11T20:09:46+08:00">2020-02-11</time>
+                <time title="修改时间：2020-10-20 18:24:00" itemprop="dateModified" datetime="2020-10-20T18:24:00+08:00">2020-10-20</time>
               
             
           </span>
@@ -462,6 +464,7 @@
 <li><p>qlimagesize<br>这也是一个开源项目，<a href="https://github.com/Nyx0uf/qlImageSize" target="_blank" rel="noopener">qlimagesize</a>,强化mac一指弹——空格键查看时候显示图片分辨率、大小等信息；<img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/15694199196130.jpg?image/auto-orient,1/resize,p_89/quality,q_90" alt><br>10月11日更新：升级Catalina10.15后，由于签名(行话叫做 Notarize)失效，quicklook插件都不能正常使用了。尝试在GitHub上找到答案，看<a href="https://github.com/whomwah/qlstephen/issues/81" target="_blank" rel="noopener">这里</a>，截止目前，仍然没有明确的解决办法。</p>
 </li>
 <li><p>iterm2<br>这绝对是我的最爱了，一款terminal软件，记得打开快捷键，一键呼出，一键隐藏！</p>
+<p><a href="https://blog.csdn.net/qq_39123009/article/details/107405179" target="_blank" rel="noopener">Iterm2美化教程</a></p>
 </li>
 <li><p>sublime text3<br>感觉是mac断看代码最舒服的软件了，插件多多，慢慢跟新。</p>
 </li>
@@ -484,16 +487,42 @@
 </ol>
 <p>暂且整理这几个，慢慢填坑。</p>
 <hr>
-<p>###10-7更新：</p>
-<ol start="14">
+<h5 id="10-7更新："><a href="#10-7更新：" class="headerlink" title="10-7更新："></a>10-7更新：</h5><ol>
 <li><a href="https://github.com/alin23/Lunar" target="_blank" rel="noopener">Lunar</a>：连接上外接显示器后，调节显示器亮度。开源。</li>
 </ol>
 <hr>
-<p>###2019-2-11更新：</p>
-<ol>
+<h5 id="2019-2-11更新："><a href="#2019-2-11更新：" class="headerlink" title="2019-2-11更新："></a>2019-2-11更新：</h5><ol>
 <li><a href="https://www.clipber.com/#download_app" target="_blank" rel="noopener">快贴</a> 打通Mac和Windows的剪贴板壁垒，全平台。</li>
 </ol>
 <hr>
+<h5 id="2020-10-17-更新"><a href="#2020-10-17-更新" class="headerlink" title="2020-10-17 更新"></a>2020-10-17 更新</h5><p>换了新的电脑，正好再次整理一波！</p>
+<ol>
+<li>调整Launchpad</li>
+</ol>
+<p>图标大小，这样看起来更加好看,在Terminal下执行一下命令：</p>
+<ul>
+<li><p>每一列现实图标个数：<code>defaults write com.apple.dock springboard-columns -int 10</code></p>
+</li>
+<li><p>每一行显示图标个数：<code>defaults write com.apple.dock springboard-rows -int 8</code></p>
+</li>
+<li><p>重制Launchpad：<code>defaults write com.apple.dock ResetLaunchPad -bool TRUE</code></p>
+</li>
+<li><p>重启Dock<code>killall Dock</code></p>
+</li>
+</ul>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-10/2020-10-18-%E5%89%8D%E5%90%8E%E5%AF%B9%E6%AF%94%E5%9B%BE2.png" alt="前后对比图2"></p>
+<p>恢复默认设置</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.dock springboard-rows Default</span><br><span class="line"></span><br><span class="line">defaults write com.apple.dock springboard-columns Default</span><br><span class="line"></span><br><span class="line">defaults write com.apple.dock ResetLaunchPad -bool TRUE</span><br><span class="line"></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>打开Finder路径显示</li>
+</ol>
+<blockquote>
+<p>显示当前路径，方便复制路径。</p>
+</blockquote>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-10/2020-10-18-%E5%89%8D%E5%90%8E%E5%AF%B9%E6%AF%94%E5%9B%BE.png" alt="前后对比图"></p>
+<ol start="3">
+<li>其他</li>
+</ol>
 
       
     </div>
@@ -586,8 +615,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -685,6 +723,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#10-7更新："><span class="nav-number">1.</span> <span class="nav-text">10-7更新：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2019-2-11更新："><span class="nav-number">2.</span> <span class="nav-text">2019-2-11更新：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2020-10-17-更新"><span class="nav-number">3.</span> <span class="nav-text">2020-10-17 更新</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
