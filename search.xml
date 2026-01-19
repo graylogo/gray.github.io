@@ -1,64 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MarkDown语法简记</title>
-    <url>/2019/07/18/MarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0/</url>
-    <content><![CDATA[<p>常用的MarkDown语法</p>
-<span id="more"></span>
-<h2 id="初识MarkDown"><a href="#初识MarkDown" class="headerlink" title="初识MarkDown"></a>初识MarkDown</h2><p>作为一个未来的码农，越早接触这一语法越好。毕竟我是拿来来练习打字速度的（手动滑稽）。</p>
-<h2 id="列表（注意中间需要空格）"><a href="#列表（注意中间需要空格）" class="headerlink" title="列表（注意中间需要空格）"></a>列表（注意中间需要空格）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1. 这是第一点</span><br><span class="line">2. 这是第二点</span><br><span class="line">-  前面一个点</span><br></pre></td></tr></table></figure>
-<p>显示效果：</p>
-<ol>
-<li>这是第一点</li>
-<li>这是第二点</li>
-</ol>
-<ul>
-<li>前面一个点</li>
-</ul>
-<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*斜体*</span><br><span class="line">~~删除线~~ (注意这是英文键盘下的~)</span><br><span class="line">**注意**：当需要打出*时，在前面加入\即可</span><br><span class="line">&gt;这是用来  \*演示\* 的 \_文本\_</span><br></pre></td></tr></table></figure>
-<p>效果：<br><strong>加粗</strong><br><em>斜体</em><br><del>删除线</del> (注意这是英文键盘下的~)<br><strong>注意</strong>：当需要打出*时，在前面加入\即可</p>
-<blockquote>
-<p>这是用来  *演示* 的 _文本_</p>
-</blockquote>
-<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h2><p>或者使用`代码片段&#96;</p>
-<p><code>if(a=b)</code></p>
-<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
-<h2 id="效果："><a href="#效果：" class="headerlink" title="效果：***"></a>效果：<br>***</h2><hr>
-<h2 id="超链接-需要用英文括号"><a href="#超链接-需要用英文括号" class="headerlink" title="超链接(需要用英文括号)"></a>超链接(需要用英文括号)</h2><p><a href="http://www.google.com/">Google</a><br><em>以下是中文括号显示效果：</em><br>[Google]（<a href="http://www.google.com/%EF%BC%89">http://www.google.com/）</a></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>插入图片的格式和插入<strong>超链接</strong>语法基本一致，只不过需要在前面加一个英文！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![GitHub](https://avatars2.githubusercontent.com/u/3265208?v=3&amp;s=100 <span class="string">&quot;GitHub,Social Coding&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://avatars2.githubusercontent.com/u/3265208?v=3&s=100" alt="GitHub" title="GitHub,Social Coding"></p>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>用前后各三个点来包含多行代码，在第一个三点后面加入代码的语言就可以高亮显示关键词：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">&quot;a\n&quot;</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用  |   来分隔不同的单元格，使用 ---来分隔表头和其它行</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">name | age</span><br><span class="line">--- | ---</span><br><span class="line">LearnShare | 12</span><br><span class="line">Mike |  32</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>age</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>LearnShare</td>
-<td>12</td>
-</tr>
-<tr>
-<td>Mike</td>
-<td>32</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2019前端面试题总汇</title>
     <url>/2020/02/25/2019%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E6%B1%87/</url>
     <content><![CDATA[<p>#前端面试题</p>
@@ -435,6 +377,34 @@
 ]]></content>
   </entry>
   <entry>
+    <title>VsCode教程</title>
+    <url>/2020/02/13/VsCode%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p><a href="https://juejin.im/post/5e440fd4e51d4527271e8b79">https://juejin.im/post/5e440fd4e51d4527271e8b79</a></p>
+<p>##VsCode安装</p>
+<ol>
+<li>进入<a href="https://code.visualstudio.com/">官网</a></li>
+<li>点击首页的蓝色按钮下载对应系统安装包并安装</li>
+</ol>
+<p>##相关设置</p>
+<ol>
+<li>可以点击上部菜单栏中的文件 —&gt; 首选项 —-&gt; 设置  设置一些软件的自带功能比如   自动保存  折行方式 等等</li>
+<li>自动保存 在设置的第一个就是选择 onFocusChange</li>
+<li>折行方式直接搜索 折行即可 选择 on</li>
+<li>切换颜色主题，点击文件—-首选项—-颜色主题  就可以选择不同的颜色主题了</li>
+<li>一般我们是把我们的大的文件夹放到 vscode 内当作工作区，方便管理</li>
+</ol>
+<p>##插件</p>
+<ol>
+<li>打开软件，看到的是欢迎页，找到页面右侧的蓝色 sublime 点击安装 sublime快捷键，会弹出两个窗口选择 yes 和 ok</li>
+<li>页面全是英文的安装插件，点击软件最左侧的第五个菜单，在搜索栏搜索 chinese 选择简体中文点击 install 安装即可，会提示你重启软件重启之后软件就汉化了。</li>
+<li>.安装在浏览器中打开插件，插件搜索栏搜索 open in browser，安装即可</li>
+<li>.安装路径自动补齐插件，插件搜索栏搜索 path，安装即可，使用方式先加引号然后使用 .&#x2F;    .&#x2F;代表当前</li>
+<li>安装 小图标插件，插件搜索栏搜索 vscode-icons，安装即可，会弹出一个小窗口让你选择图标主题选择刚才安装好的即可</li>
+</ol>
+<p>setting sync <a href="https://www.cnblogs.com/zzhaolei/p/12028241.html">插件的使用</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Mac安装Redis5.0.8</title>
     <url>/2020/05/16/Mac%E5%AE%89%E8%A3%85Redis5-0-8/</url>
     <content><![CDATA[<p>在用SpeingBoot做邮箱验证的时候，需要用到<code>Redis</code>，所以在Mac和CentOs中都安装了<code>redis5.0.8</code>：</p>
@@ -466,6 +436,64 @@
 ]]></content>
   </entry>
   <entry>
+    <title>MarkDown语法简记</title>
+    <url>/2019/07/18/MarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0/</url>
+    <content><![CDATA[<p>常用的MarkDown语法</p>
+<span id="more"></span>
+<h2 id="初识MarkDown"><a href="#初识MarkDown" class="headerlink" title="初识MarkDown"></a>初识MarkDown</h2><p>作为一个未来的码农，越早接触这一语法越好。毕竟我是拿来来练习打字速度的（手动滑稽）。</p>
+<h2 id="列表（注意中间需要空格）"><a href="#列表（注意中间需要空格）" class="headerlink" title="列表（注意中间需要空格）"></a>列表（注意中间需要空格）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1. 这是第一点</span><br><span class="line">2. 这是第二点</span><br><span class="line">-  前面一个点</span><br></pre></td></tr></table></figure>
+<p>显示效果：</p>
+<ol>
+<li>这是第一点</li>
+<li>这是第二点</li>
+</ol>
+<ul>
+<li>前面一个点</li>
+</ul>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*斜体*</span><br><span class="line">~~删除线~~ (注意这是英文键盘下的~)</span><br><span class="line">**注意**：当需要打出*时，在前面加入\即可</span><br><span class="line">&gt;这是用来  \*演示\* 的 \_文本\_</span><br></pre></td></tr></table></figure>
+<p>效果：<br><strong>加粗</strong><br><em>斜体</em><br><del>删除线</del> (注意这是英文键盘下的~)<br><strong>注意</strong>：当需要打出*时，在前面加入\即可</p>
+<blockquote>
+<p>这是用来  *演示* 的 _文本_</p>
+</blockquote>
+<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h2><p>或者使用`代码片段&#96;</p>
+<p><code>if(a=b)</code></p>
+<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<h2 id="效果："><a href="#效果：" class="headerlink" title="效果：***"></a>效果：<br>***</h2><hr>
+<h2 id="超链接-需要用英文括号"><a href="#超链接-需要用英文括号" class="headerlink" title="超链接(需要用英文括号)"></a>超链接(需要用英文括号)</h2><p><a href="http://www.google.com/">Google</a><br><em>以下是中文括号显示效果：</em><br>[Google]（<a href="http://www.google.com/%EF%BC%89">http://www.google.com/）</a></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>插入图片的格式和插入<strong>超链接</strong>语法基本一致，只不过需要在前面加一个英文！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![GitHub](https://avatars2.githubusercontent.com/u/3265208?v=3&amp;s=100 <span class="string">&quot;GitHub,Social Coding&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://avatars2.githubusercontent.com/u/3265208?v=3&s=100" alt="GitHub" title="GitHub,Social Coding"></p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>用前后各三个点来包含多行代码，在第一个三点后面加入代码的语言就可以高亮显示关键词：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">&quot;a\n&quot;</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用  |   来分隔不同的单元格，使用 ---来分隔表头和其它行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">name | age</span><br><span class="line">--- | ---</span><br><span class="line">LearnShare | 12</span><br><span class="line">Mike |  32</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LearnShare</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Mike</td>
+<td>32</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ubuntu16.04.4安装与优化</title>
     <url>/2020/02/15/Ubuntu16-04-4%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<p>由于我的 <strong>acer</strong> 不争气，好不容易装好的系统，关机以后自检找不到系统了，所以这篇文章暂时搁置，等我有了一台能顺利跑Ubuntu的电脑再来填坑。</p>
@@ -480,30 +508,6 @@
 <p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E4%B8%BB%E9%A2%98.jpg"></p>
 <p>在安装Ubuntu的过程中，发现我的老电脑不堪重负，崩了。。。。<br>打算组装一台itx主机来装Linux</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/05/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>思考</category>
-      </categories>
-      <tags>
-        <tag>感悟</tag>
-      </tags>
   </entry>
   <entry>
     <title>Mac上常用的软件&amp;插件</title>
@@ -585,6 +589,43 @@
 ]]></content>
       <tags>
         <tag>Macos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/05/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>思考</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用Mweb发布Hexo博客</title>
+    <url>/2019/04/10/test/</url>
+    <content><![CDATA[<h2 id="测试一下七牛云图床功能"><a href="#测试一下七牛云图床功能" class="headerlink" title="测试一下七牛云图床功能"></a>测试一下七牛云图床功能</h2><p><img src="http://grayblog.cn.qiniudns.com/mweb/gray.png" alt="gray"></p>
+<h2 id="测试阿里云图床功能"><a href="#测试阿里云图床功能" class="headerlink" title="测试阿里云图床功能"></a>测试阿里云图床功能</h2><p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950596523920.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>能够正常上传图片</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
   <entry>
@@ -671,85 +712,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VsCode教程</title>
-    <url>/2020/02/13/VsCode%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><a href="https://juejin.im/post/5e440fd4e51d4527271e8b79">https://juejin.im/post/5e440fd4e51d4527271e8b79</a></p>
-<p>##VsCode安装</p>
-<ol>
-<li>进入<a href="https://code.visualstudio.com/">官网</a></li>
-<li>点击首页的蓝色按钮下载对应系统安装包并安装</li>
-</ol>
-<p>##相关设置</p>
-<ol>
-<li>可以点击上部菜单栏中的文件 —&gt; 首选项 —-&gt; 设置  设置一些软件的自带功能比如   自动保存  折行方式 等等</li>
-<li>自动保存 在设置的第一个就是选择 onFocusChange</li>
-<li>折行方式直接搜索 折行即可 选择 on</li>
-<li>切换颜色主题，点击文件—-首选项—-颜色主题  就可以选择不同的颜色主题了</li>
-<li>一般我们是把我们的大的文件夹放到 vscode 内当作工作区，方便管理</li>
-</ol>
-<p>##插件</p>
-<ol>
-<li>打开软件，看到的是欢迎页，找到页面右侧的蓝色 sublime 点击安装 sublime快捷键，会弹出两个窗口选择 yes 和 ok</li>
-<li>页面全是英文的安装插件，点击软件最左侧的第五个菜单，在搜索栏搜索 chinese 选择简体中文点击 install 安装即可，会提示你重启软件重启之后软件就汉化了。</li>
-<li>.安装在浏览器中打开插件，插件搜索栏搜索 open in browser，安装即可</li>
-<li>.安装路径自动补齐插件，插件搜索栏搜索 path，安装即可，使用方式先加引号然后使用 .&#x2F;    .&#x2F;代表当前</li>
-<li>安装 小图标插件，插件搜索栏搜索 vscode-icons，安装即可，会弹出一个小窗口让你选择图标主题选择刚才安装好的即可</li>
-</ol>
-<p>setting sync <a href="https://www.cnblogs.com/zzhaolei/p/12028241.html">插件的使用</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>对【计算机】的新理解</title>
-    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<blockquote>
-<p>开端</p>
-</blockquote>
-<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
- <span id="more"></span>
-
-<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
-<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
-<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>用Mweb发布Hexo博客</title>
-    <url>/2019/04/10/test/</url>
-    <content><![CDATA[<h2 id="测试一下七牛云图床功能"><a href="#测试一下七牛云图床功能" class="headerlink" title="测试一下七牛云图床功能"></a>测试一下七牛云图床功能</h2><p><img src="http://grayblog.cn.qiniudns.com/mweb/gray.png" alt="gray"></p>
-<h2 id="测试阿里云图床功能"><a href="#测试阿里云图床功能" class="headerlink" title="测试阿里云图床功能"></a>测试阿里云图床功能</h2><p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950596523920.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>能够正常上传图片</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解决Mac中Terminal无法访问github</title>
-    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
-    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
-<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
-<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
-<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line"> 140.82.113.4 www.github.com</span><br></pre></td></tr></table></figure>
-<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
-<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global https.https://github.com.proxy https://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
-<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
-<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
-]]></content>
-      <categories>
-        <category>问题</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>树莓派+HomeBridge实现HomeKit控制智能家居</title>
     <url>/2019/09/25/%E6%A0%91%E8%8E%93%E6%B4%BE+HomeBridge%E5%AE%9E%E7%8E%B0HomeKit%E6%8E%A7%E5%88%B6%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/</url>
     <content><![CDATA[<p>米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“<strong>电视.app</strong>“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个<a href="https://github.com/nfarina/homebridge">HomeBridge</a>项目，通过树莓派做桥接，实现Siri控制米家智能设备。</p>
@@ -798,6 +760,98 @@
       <tags>
         <tag>树莓派</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>全球IPv4地址耗尽，正式迈入IPv6时代！</title>
+    <url>/2019/11/26/%E5%85%A8%E7%90%83IPv4%E5%9C%B0%E5%9D%80%E8%80%97%E5%B0%BD%EF%BC%8C%E6%AD%A3%E5%BC%8F%E8%BF%88%E5%85%A5IPv6%E6%97%B6%E4%BB%A3%EF%BC%81/</url>
+    <content><![CDATA[<p>2019年11月25日 22:35分，是值得互联网纪念的一个时刻，全球IPv4地址已经全部耗尽！</p>
+<span id="more"></span>
+<p>IPv4中规定IP地址长度为32位二进制，最多能有2^32 个，大约42.9亿个，而IPv6采用128位地址长度，能达到2^128 个，这可是一个天文数字了，可以保证地球上每平方米分配1000多个地址。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>解决Mac中Terminal无法访问github</title>
+    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
+    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
+<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
+<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
+<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line"> 140.82.113.4 www.github.com</span><br></pre></td></tr></table></figure>
+<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
+<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global https.https://github.com.proxy https://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
+]]></content>
+      <categories>
+        <category>问题</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2026/01/19/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>这是一篇测试文章，用于验证Hexo博客是否正常工作。</p>
+<h3 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h3><ol>
+<li>这是第一点测试内容</li>
+<li>这是第二点测试内容</li>
+<li>这是第三点测试内容</li>
+</ol>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">exho g -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h3><p><img src="https://via.placeholder.com/150" alt="测试图片"></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>通过Hexo + Github 搭建博客</title>
+    <url>/2019/05/25/%E9%80%9A%E8%BF%87Hexo-Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<blockquote>
+<p>最近学习压力很大，想起了这个被搁置一年的博客计划，正好看到了Hexo搭建的<a href="http://frankorz.com/archives/">萤火之森</a>页面，真的很漂亮，于是决定动手自己搭建一个。这篇文章正好记录一下搭建过程中遇到的问题，方便以后学习。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="hexo-基础命令"><a href="#hexo-基础命令" class="headerlink" title="hexo 基础命令"></a>hexo 基础命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate  生成</span><br><span class="line">hexo d == hexo deploy 部署</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo n == hexo new</span><br></pre></td></tr></table></figure>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="1-Github密匙只读"><a href="#1-Github密匙只读" class="headerlink" title="1. Github密匙只读"></a>1. Github密匙只读</h3><h3 id="2-hexo-s-显示4000端口不能用"><a href="#2-hexo-s-显示4000端口不能用" class="headerlink" title="2. hexo s 显示4000端口不能用"></a>2. hexo s 显示4000端口不能用</h3><p>解决方法：在Blog的根目录下，修改_config.ynl文件，在最后加上：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">server:</span><br><span class="line">    port: <span class="number">4001</span>  #注意port前有Tab键 冒号后有空格</span><br><span class="line">    compress: <span class="literal">true</span></span><br><span class="line">    header: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="花费的时间"><a href="#花费的时间" class="headerlink" title="花费的时间"></a>花费的时间</h2><p>总的算下来，总共花了我四个小时左右的时间来搭建这个博客，当然，这仅仅是搭建了基础的框架，后期还需要大量的时间来美化，不过鉴于最近考试太忙，估计得延期一段时间了。</p>
+<h2 id="为什么要需要这个博客？"><a href="#为什么要需要这个博客？" class="headerlink" title="为什么要需要这个博客？"></a>为什么要需要这个博客？</h2><p>一年前，我用阿里云镜像一键搭建了基于Wordpress的个人博客，但是由于拖更，导致兴趣越来越少，最后也就不了了之了。从这段历程中，我感受到了，不是自己努力来的结果自己真是不懂得珍惜，这一个花费我一晚上心血建立的Blog，我可要好好监督自己，不要荒废了。<br>其实，挺羡慕那些能在各种论坛分享自己知识的人，帮助别人的同时也能留下自己的足迹，最重要的是，在这个过程中，能找到归属感与成就感，这就是分享的意义吧。<br>很大一部分人，写的都是技术博客，但是我知道自己现在能力有限，输出不了太多的干货，所以，现在这个阶段，更多的是记录一些学习笔记，当然，我也想穿插一些自己的心里话，写一下每个阶段的感悟。</p>
+<h2 id="搭建过程让我学到了什么"><a href="#搭建过程让我学到了什么" class="headerlink" title="搭建过程让我学到了什么"></a>搭建过程让我学到了什么</h2><p>搭建过程虽然烦琐，但我确乐在其中，兴趣是最好的老师，在搭建过程中，我看到了很多感兴趣的技术，比如GitHub的代码托管（很早以前我就注册了GitHub账号，但是一直没有项目来练习），比如Node.js，看到漂亮的网页，不眠不免对前端心生向往，再比如最近一直在学习的Linux命令行，现我已经迫不及待想要用shell自己写一个一键部署脚本了。</p>
+<h2 id="给自己立下Flag"><a href="#给自己立下Flag" class="headerlink" title="给自己立下Flag"></a>给自己立下Flag</h2><p>我的脑海里会迸发出很多新计划，但是最后很多都是不了了之，因为没有去实现，所以，在这里，我要给自己定几个目标：</p>
+<ol>
+<li>每个月至少来更新一篇博客，不管是什么类型的。</li>
+<li>尽快掌握MarkDown与法，写出排版漂亮的文章。</li>
+<li>将我的小站好好维护下去，做一些优化。</li>
+<li>开始GitHub的学习</li>
+</ol>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我觉得我很有想法，但是想到和做到之间，有一块透明的玻璃挡在我的面前，它看不见，但是它真实存在，而现在我要做的，就是想办法用行动突破它！<br>在脑海里的话语，写在纸面上就是另外一番模样，说白了，我需要练习自己的写作能力了，多年后，看到这青涩的文字，嘴角应该会有一丝微笑吧。</p>
+]]></content>
+      <categories>
+        <category>思考</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>那些句子</title>
+    <url>/2019/09/26/%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/</url>
+    <content><![CDATA[<ol>
+<li>七岁的那年，抓住那只蝉，以为能抓住了夏天。  –<a href="https://music.apple.com/cn/album/%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BF%AB%E4%B9%90/1098553403?i=1098553466">《如烟》</a></li>
+<li></li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>提问的智慧</title>
@@ -1215,53 +1269,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>那些句子</title>
-    <url>/2019/09/26/%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/</url>
-    <content><![CDATA[<ol>
-<li>七岁的那年，抓住那只蝉，以为能抓住了夏天。  –<a href="https://music.apple.com/cn/album/%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BF%AB%E4%B9%90/1098553403?i=1098553466">《如烟》</a></li>
-<li></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>全球IPv4地址耗尽，正式迈入IPv6时代！</title>
-    <url>/2019/11/26/%E5%85%A8%E7%90%83IPv4%E5%9C%B0%E5%9D%80%E8%80%97%E5%B0%BD%EF%BC%8C%E6%AD%A3%E5%BC%8F%E8%BF%88%E5%85%A5IPv6%E6%97%B6%E4%BB%A3%EF%BC%81/</url>
-    <content><![CDATA[<p>2019年11月25日 22:35分，是值得互联网纪念的一个时刻，全球IPv4地址已经全部耗尽！</p>
-<span id="more"></span>
-<p>IPv4中规定IP地址长度为32位二进制，最多能有2^32 个，大约42.9亿个，而IPv6采用128位地址长度，能达到2^128 个，这可是一个天文数字了，可以保证地球上每平方米分配1000多个地址。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>通过Hexo + Github 搭建博客</title>
-    <url>/2019/05/25/%E9%80%9A%E8%BF%87Hexo-Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<blockquote>
-<p>最近学习压力很大，想起了这个被搁置一年的博客计划，正好看到了Hexo搭建的<a href="http://frankorz.com/archives/">萤火之森</a>页面，真的很漂亮，于是决定动手自己搭建一个。这篇文章正好记录一下搭建过程中遇到的问题，方便以后学习。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="hexo-基础命令"><a href="#hexo-基础命令" class="headerlink" title="hexo 基础命令"></a>hexo 基础命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate  生成</span><br><span class="line">hexo d == hexo deploy 部署</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo n == hexo new</span><br></pre></td></tr></table></figure>
-<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="1-Github密匙只读"><a href="#1-Github密匙只读" class="headerlink" title="1. Github密匙只读"></a>1. Github密匙只读</h3><h3 id="2-hexo-s-显示4000端口不能用"><a href="#2-hexo-s-显示4000端口不能用" class="headerlink" title="2. hexo s 显示4000端口不能用"></a>2. hexo s 显示4000端口不能用</h3><p>解决方法：在Blog的根目录下，修改_config.ynl文件，在最后加上：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">server:</span><br><span class="line">    port: <span class="number">4001</span>  #注意port前有Tab键 冒号后有空格</span><br><span class="line">    compress: <span class="literal">true</span></span><br><span class="line">    header: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="花费的时间"><a href="#花费的时间" class="headerlink" title="花费的时间"></a>花费的时间</h2><p>总的算下来，总共花了我四个小时左右的时间来搭建这个博客，当然，这仅仅是搭建了基础的框架，后期还需要大量的时间来美化，不过鉴于最近考试太忙，估计得延期一段时间了。</p>
-<h2 id="为什么要需要这个博客？"><a href="#为什么要需要这个博客？" class="headerlink" title="为什么要需要这个博客？"></a>为什么要需要这个博客？</h2><p>一年前，我用阿里云镜像一键搭建了基于Wordpress的个人博客，但是由于拖更，导致兴趣越来越少，最后也就不了了之了。从这段历程中，我感受到了，不是自己努力来的结果自己真是不懂得珍惜，这一个花费我一晚上心血建立的Blog，我可要好好监督自己，不要荒废了。<br>其实，挺羡慕那些能在各种论坛分享自己知识的人，帮助别人的同时也能留下自己的足迹，最重要的是，在这个过程中，能找到归属感与成就感，这就是分享的意义吧。<br>很大一部分人，写的都是技术博客，但是我知道自己现在能力有限，输出不了太多的干货，所以，现在这个阶段，更多的是记录一些学习笔记，当然，我也想穿插一些自己的心里话，写一下每个阶段的感悟。</p>
-<h2 id="搭建过程让我学到了什么"><a href="#搭建过程让我学到了什么" class="headerlink" title="搭建过程让我学到了什么"></a>搭建过程让我学到了什么</h2><p>搭建过程虽然烦琐，但我确乐在其中，兴趣是最好的老师，在搭建过程中，我看到了很多感兴趣的技术，比如GitHub的代码托管（很早以前我就注册了GitHub账号，但是一直没有项目来练习），比如Node.js，看到漂亮的网页，不眠不免对前端心生向往，再比如最近一直在学习的Linux命令行，现我已经迫不及待想要用shell自己写一个一键部署脚本了。</p>
-<h2 id="给自己立下Flag"><a href="#给自己立下Flag" class="headerlink" title="给自己立下Flag"></a>给自己立下Flag</h2><p>我的脑海里会迸发出很多新计划，但是最后很多都是不了了之，因为没有去实现，所以，在这里，我要给自己定几个目标：</p>
-<ol>
-<li>每个月至少来更新一篇博客，不管是什么类型的。</li>
-<li>尽快掌握MarkDown与法，写出排版漂亮的文章。</li>
-<li>将我的小站好好维护下去，做一些优化。</li>
-<li>开始GitHub的学习</li>
-</ol>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我觉得我很有想法，但是想到和做到之间，有一块透明的玻璃挡在我的面前，它看不见，但是它真实存在，而现在我要做的，就是想办法用行动突破它！<br>在脑海里的话语，写在纸面上就是另外一番模样，说白了，我需要练习自己的写作能力了，多年后，看到这青涩的文字，嘴角应该会有一丝微笑吧。</p>
-]]></content>
-      <categories>
-        <category>思考</category>
-      </categories>
-      <tags>
-        <tag>感悟</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>阿里云OSS乌龙</title>
     <url>/2019/09/27/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B9%8C%E9%BE%99/</url>
     <content><![CDATA[<p>昨天，突然接到阿里云的短信，我前天才开的阿里云oss欠费停机了？？？<img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/imgeab4a9a03e8d1.jpeg?image/auto-orient,1/resize,p_89/quality,q_90" alt="IMG_EAB4A9A03E8D-1"></p>
@@ -1275,24 +1282,17 @@ excuse me？ 我才开通一天啊喂！后来我迅速查看了使用详情，!
 ]]></content>
   </entry>
   <entry>
-    <title>测试文章</title>
-    <url>/2026/01/19/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>这是一篇测试文章，用于验证Hexo博客是否正常工作。</p>
-<h3 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h3><ol>
-<li>这是第一点测试内容</li>
-<li>这是第二点测试内容</li>
-<li>这是第三点测试内容</li>
-</ol>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">exho g -d</span><br></pre></td></tr></table></figure>
+    <title>对【计算机】的新理解</title>
+    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<blockquote>
+<p>开端</p>
+</blockquote>
+<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
+ <span id="more"></span>
 
-<h3 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h3><p><img src="https://via.placeholder.com/150" alt="测试图片"></p>
+<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
+<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
+<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
 ]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>Hexo</tag>
-      </tags>
   </entry>
 </search>
