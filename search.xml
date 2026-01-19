@@ -1,6 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Mac安装Redis5.0.8</title>
+    <url>/2020/05/16/Mac%E5%AE%89%E8%A3%85Redis5-0-8/</url>
+    <content><![CDATA[<p>在用SpeingBoot做邮箱验证的时候，需要用到<code>Redis</code>，所以在Mac和CentOs中都安装了<code>redis5.0.8</code>：</p>
+<span id="more"></span>
+
+<h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h4><p>redis<a href="https://redis.io/">下载地址</a>，选择download，然后可以看到5.0.8的安装包：</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045020.png" alt="Screen Shot 2020-05-16 at 12.49.14"></p>
+<p>或者，可以通过wget安装<code>wget http://download.redis.io/releases/redis-5.0.8.tar.gz</code></p>
+<h4 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h4><ul>
+<li><p>解压到安装目录<code>tar zxvf redis-5.0.8.tar.gz /usr/local</code></p>
+<blockquote>
+<p>注意，如果没有权限请加上sudo</p>
+</blockquote>
+</li>
+<li><p>切换到解压好的目录<code>cd /usr/local/redis-5.0.8</code>，执行make命令，大概两分钟后安装完成</p>
+</li>
+<li><p>执行<code>make install</code>，作用是在<code>/usr/local/bi</code>n里产生一些文件(命令)，比如<code>redis-server</code>、<code>redis-cli</code>等，如果不执行make install，那么键入启动服务命令redis-server时会提示“该命令不存在”，redis服务就无法启动。我们查看一下：</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045716.png" alt="image-20200516125715391"></p>
+</li>
+</ul>
+<h4 id="3-修改配置文件redis-conf"><a href="#3-修改配置文件redis-conf" class="headerlink" title="3. 修改配置文件redis.conf"></a>3. 修改配置文件redis.conf</h4><p>修改redis.conf，将GENERAL里的no改成yes（默认redis.conf里守护进程没有被开启）</p>
+<p>(注：这个配置文件可能在 &#x2F;usr&#x2F;redis&#x2F;redis-5.0.8&#x2F;redis.conf，或者&#x2F;etc&#x2F;redis.conf)</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045936.png" alt="image-20200516125936103"></p>
+<h4 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h4><p>执行<code>to redis-server /usr/local/redis-5.0.8/redis.conf</code>加载配置文件，可以在bash配置文件里重命名一下，<code>alias redis=&#39;redis-server /usr/local/redis-5.0.8/redis.conf&#39;</code>，查看结果：配置文件已经加载；</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-050301.png" alt="image-20200516130301891"></p>
+<p>加载配置文件后，启动客户端<code>redis-cli</code> </p>
+<p>退出的话先执行shutdown再exit即可</p>
+<h4 id="5-uer-local权限问题"><a href="#5-uer-local权限问题" class="headerlink" title="5. &#x2F;uer&#x2F;local权限问题"></a>5. &#x2F;uer&#x2F;local权限问题</h4><p>默认安装以后，在Mac系统中就算是sudo用户也没有访问redis权限，退出的时候提示没有权限保存<code>saving: Permission denied</code>，手动修改一下文件夹权限<code>sudo chown -R $(whoami) /usr/local/redis-5.0.8</code>，👌</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>MarkDown语法简记</title>
+    <url>/2019/07/18/MarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0/</url>
+    <content><![CDATA[<p>常用的MarkDown语法</p>
+<span id="more"></span>
+<h2 id="初识MarkDown"><a href="#初识MarkDown" class="headerlink" title="初识MarkDown"></a>初识MarkDown</h2><p>作为一个未来的码农，越早接触这一语法越好。毕竟我是拿来来练习打字速度的（手动滑稽）。</p>
+<h2 id="列表（注意中间需要空格）"><a href="#列表（注意中间需要空格）" class="headerlink" title="列表（注意中间需要空格）"></a>列表（注意中间需要空格）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">1. 这是第一点<br>2. 这是第二点<br>-  前面一个点<br></code></pre></td></tr></table></figure>
+<p>显示效果：</p>
+<ol>
+<li>这是第一点</li>
+<li>这是第二点</li>
+</ol>
+<ul>
+<li>前面一个点</li>
+</ul>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">**加粗**<br>*斜体*<br>~~删除线~~ (注意这是英文键盘下的~)<br>**注意**：当需要打出*时，在前面加入\即可<br>&gt;这是用来  \*演示\* 的 \_文本\_<br></code></pre></td></tr></table></figure>
+<p>效果：<br><strong>加粗</strong><br><em>斜体</em><br><del>删除线</del> (注意这是英文键盘下的~)<br><strong>注意</strong>：当需要打出*时，在前面加入\即可</p>
+<blockquote>
+<p>这是用来  *演示* 的 _文本_</p>
+</blockquote>
+<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h2><p>或者使用`代码片段&#96;</p>
+<p><code>if(a=b)</code></p>
+<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">***<br>---<br>___<br></code></pre></td></tr></table></figure>
+<h2 id="效果："><a href="#效果：" class="headerlink" title="效果：***"></a>效果：<br>***</h2><hr>
+<h2 id="超链接-需要用英文括号"><a href="#超链接-需要用英文括号" class="headerlink" title="超链接(需要用英文括号)"></a>超链接(需要用英文括号)</h2><p><a href="http://www.google.com/">Google</a><br><em>以下是中文括号显示效果：</em><br>[Google]（<a href="http://www.google.com/%EF%BC%89">http://www.google.com/）</a></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>插入图片的格式和插入<strong>超链接</strong>语法基本一致，只不过需要在前面加一个英文！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">![GitHub](https://avatars2.githubusercontent.com/u/3265208?v=3&amp;s=100 <span class="hljs-string">&quot;GitHub,Social Coding&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p><img src="https://avatars2.githubusercontent.com/u/3265208?v=3&s=100" alt="GitHub" title="GitHub,Social Coding"></p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>用前后各三个点来包含多行代码，在第一个三点后面加入代码的语言就可以高亮显示关键词：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>print(<span class="hljs-string">&quot;a\n&quot;</span>);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c">使用  <span class="hljs-string">|   来分隔不同的单元格，使用 ---来分隔表头和其它行</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight md"><table><tr><td class="code"><pre><code class="hljs md">name | age<br>--- | ---<br>LearnShare | 12<br>Mike |  32<br></code></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LearnShare</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Mike</td>
+<td>32</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI 的出现改变了一切：大模型时代的编年史</title>
+    <url>/2026/01/19/AI-%E7%9A%84%E5%87%BA%E7%8E%B0%E6%94%B9%E5%8F%98%E4%BA%86%E4%B8%80%E5%88%87%EF%BC%9A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%97%B6%E4%BB%A3%E7%9A%84%E7%BC%96%E5%B9%B4%E5%8F%B2/</url>
+    <content><![CDATA[<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2026-01/2026-01-19-unnamed.jpg" alt="ai"></p>
+<h1 id="AI-的出现改变了一切：大模型时代的编年史-2022-2026"><a href="#AI-的出现改变了一切：大模型时代的编年史-2022-2026" class="headerlink" title="AI 的出现改变了一切：大模型时代的编年史 (2022-2026)"></a>AI 的出现改变了一切：大模型时代的编年史 (2022-2026)</h1><blockquote>
+<p>“我们正处在一个认知的迁徙期。过去我们利用工具，现在我们与智能共生。”</p>
+</blockquote>
+<h2 id="🚀-前言"><a href="#🚀-前言" class="headerlink" title="🚀 前言"></a>🚀 前言</h2><p>从 2022 年末那个寒冷的冬天开始，一场关于“智能”的爆发彻底重塑了人类社会的运行逻辑。从最初的文字对话，到如今 2026 年的深度自主智能，我们见证了科技史上最密集的进化。</p>
+<hr>
+<h2 id="📅-大模型时代核心里程碑"><a href="#📅-大模型时代核心里程碑" class="headerlink" title="📅 大模型时代核心里程碑"></a>📅 大模型时代核心里程碑</h2><h3 id="1-启蒙与爆发：对话式-AI-的诞生-2022-11-2023-12"><a href="#1-启蒙与爆发：对话式-AI-的诞生-2022-11-2023-12" class="headerlink" title="1. 启蒙与爆发：对话式 AI 的诞生 (2022.11 - 2023.12)"></a>1. 启蒙与爆发：对话式 AI 的诞生 (2022.11 - 2023.12)</h3><ul>
+<li><strong>2022年11月 - ChatGPT 发布</strong>：开启了全民 AI 启蒙。</li>
+<li><strong>2023年3月 - GPT-4 发布</strong>：AI 具备了逻辑严密的推理能力。</li>
+<li><strong>2023年中下旬 - 开源社区崛起 (Llama 系列)</strong>：AI 能力不再是大厂垄断，全球进入“百模大战”。</li>
+</ul>
+<blockquote>
+<p><strong>对个人的影响：</strong> &gt; * <strong>技能平权</strong>：普通人通过 Prompt 也能写出高质量代码和专业文案。</p>
+<ul>
+<li><strong>信息获取变革</strong>：从“搜索信息”转向“直接获取答案”。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="2-视觉与多模态的飞跃-2024-02-2025-01"><a href="#2-视觉与多模态的飞跃-2024-02-2025-01" class="headerlink" title="2. 视觉与多模态的飞跃 (2024.02 - 2025.01)"></a>2. 视觉与多模态的飞跃 (2024.02 - 2025.01)</h3><ul>
+<li><strong>2024年初 - Sora &amp; Veo 发布</strong>：AI 能够根据文字生成极具电影感的视频。</li>
+<li><strong>2024年中 - 原生多模态模型 (GPT-4o&#x2F;Gemini 1.5 Pro)</strong>：AI 可以通过摄像头实时看到并听懂世界，具备了极低延迟的语音交互能力。</li>
+</ul>
+<blockquote>
+<p><strong>对个人的影响：</strong> &gt; * <strong>超级个体崛起</strong>：一个人 + AI 就能成为一家影视公司或广告传媒公司。</p>
+<ul>
+<li><strong>翻译消失</strong>：实时同声传译让语言壁垒彻底崩塌。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="3-从助手到智能体-Agentic-AI-2025-02-2025-12"><a href="#3-从助手到智能体-Agentic-AI-2025-02-2025-12" class="headerlink" title="3. 从助手到智能体 (Agentic AI) (2025.02 - 2025.12)"></a>3. 从助手到智能体 (Agentic AI) (2025.02 - 2025.12)</h3><ul>
+<li><strong>2025年 - 自主智能体成熟</strong>：AI 不再只是“对话”，而是能自主操作电脑、订票、处理报销流。</li>
+<li><strong>2025年末 - 具身智能 (Embodied AI) 突破</strong>：大模型开始装入机器人躯壳，能够处理复杂的家务和工业分拣。</li>
+</ul>
+<blockquote>
+<p><strong>对个人的影响：</strong> &gt; * <strong>数字劳动力化</strong>：每个人都拥有了一支 24 小时待命的“虚拟员工”团队。</p>
+<ul>
+<li><strong>精力释放</strong>：人类从繁杂的行政和琐碎事务中解脱出来。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="4-深度推理与-AGI-的雏形-2026-01-至今"><a href="#4-深度推理与-AGI-的雏形-2026-01-至今" class="headerlink" title="4. 深度推理与 AGI 的雏形 (2026.01 至今)"></a>4. 深度推理与 AGI 的雏形 (2026.01 至今)</h3><ul>
+<li><strong>2026年初 - 慢思考模型 (Reasoning Models) 普及</strong>：AI 具备了深度反思能力，能够解决人类历史上复杂的数学和科学难题。</li>
+<li><strong>2026年 - 个性化 AI 伴侣 (Personal Intelligence)</strong>：AI 拥有了长达数年的记忆，成为最了解你的“数字孪生”。</li>
+</ul>
+<blockquote>
+<p><strong>对个人的影响：</strong> &gt; * <strong>身份焦虑与共生</strong>：我们开始思考“人之所以为人”的独特性。</p>
+<ul>
+<li><strong>永不消失的经验</strong>：你的知识和思维可以通过 AI 永久留存。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="🧠-总结：我们改变了什么？"><a href="#🧠-总结：我们改变了什么？" class="headerlink" title="🧠 总结：我们改变了什么？"></a>🧠 总结：我们改变了什么？</h2><ol>
+<li><strong>思维方式</strong>：从“如何做”转变为“想要什么”。</li>
+<li><strong>职业结构</strong>：初级技能被自动化，而“审美、共情、跨界连接”成为核心价值。</li>
+<li><strong>真实边界</strong>：虚拟与真实的界限日益模糊，我们需要建立全新的数字伦理。</li>
+</ol>
+<p><strong>未来已来，它不在远方，而在你点击发送键的每一次对话中。在 AI 出现之前，我们通过学习适应世界；在 AI 出现之后，我们通过定义需求改变世界。这场变革最伟大的地方在于：它赋予了每个普通人，成为‘英雄’或‘艺术家’的机会。</strong></p>
+]]></content>
+      <tags>
+        <tag>ai</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu16.04.4安装与优化</title>
+    <url>/2020/02/15/Ubuntu16-04-4%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>由于我的 <strong>acer</strong> 不争气，好不容易装好的系统，关机以后自检找不到系统了，所以这篇文章暂时搁置，等我有了一台能顺利跑Ubuntu的电脑再来填坑。</p>
+<span id="more"></span>
+<h3 id="没错，这篇文章就是被搁置了。-2020-02-16"><a href="#没错，这篇文章就是被搁置了。-2020-02-16" class="headerlink" title="没错，这篇文章就是被搁置了。   2020-02-16"></a>没错，这篇文章就是被搁置了。   2020-02-16</h3><p>随手放一些效果图，很Mac有没有？<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E6%A1%8C%E9%9D%A2%E6%95%88%E6%9E%9C.png"></p>
+<center>桌面效果图</center>
+
+<p>下载主题包，链接:<a href="https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ">https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ</a>  密码:a9ne,根据文档内容放入对应文件夹</p>
+<blockquote>
+<p>安装gnome-tweak-tool,然后打开tweak工具，  </p>
+</blockquote>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E4%B8%BB%E9%A2%98.jpg"></p>
+<p>在安装Ubuntu的过程中，发现我的老电脑不堪重负，崩了。。。。<br>打算组装一台itx主机来装Linux</p>
+]]></content>
+  </entry>
+  <entry>
     <title>2019前端面试题总汇</title>
     <url>/2020/02/25/2019%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E6%B1%87/</url>
     <content><![CDATA[<p>#前端面试题</p>
@@ -377,111 +547,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Mac安装Redis5.0.8</title>
-    <url>/2020/05/16/Mac%E5%AE%89%E8%A3%85Redis5-0-8/</url>
-    <content><![CDATA[<p>在用SpeingBoot做邮箱验证的时候，需要用到<code>Redis</code>，所以在Mac和CentOs中都安装了<code>redis5.0.8</code>：</p>
-<span id="more"></span>
-
-<h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h4><p>redis<a href="https://redis.io/">下载地址</a>，选择download，然后可以看到5.0.8的安装包：</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045020.png" alt="Screen Shot 2020-05-16 at 12.49.14"></p>
-<p>或者，可以通过wget安装<code>wget http://download.redis.io/releases/redis-5.0.8.tar.gz</code></p>
-<h4 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h4><ul>
-<li><p>解压到安装目录<code>tar zxvf redis-5.0.8.tar.gz /usr/local</code></p>
-<blockquote>
-<p>注意，如果没有权限请加上sudo</p>
-</blockquote>
-</li>
-<li><p>切换到解压好的目录<code>cd /usr/local/redis-5.0.8</code>，执行make命令，大概两分钟后安装完成</p>
-</li>
-<li><p>执行<code>make install</code>，作用是在<code>/usr/local/bi</code>n里产生一些文件(命令)，比如<code>redis-server</code>、<code>redis-cli</code>等，如果不执行make install，那么键入启动服务命令redis-server时会提示“该命令不存在”，redis服务就无法启动。我们查看一下：</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045716.png" alt="image-20200516125715391"></p>
-</li>
-</ul>
-<h4 id="3-修改配置文件redis-conf"><a href="#3-修改配置文件redis-conf" class="headerlink" title="3. 修改配置文件redis.conf"></a>3. 修改配置文件redis.conf</h4><p>修改redis.conf，将GENERAL里的no改成yes（默认redis.conf里守护进程没有被开启）</p>
-<p>(注：这个配置文件可能在 &#x2F;usr&#x2F;redis&#x2F;redis-5.0.8&#x2F;redis.conf，或者&#x2F;etc&#x2F;redis.conf)</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045936.png" alt="image-20200516125936103"></p>
-<h4 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h4><p>执行<code>to redis-server /usr/local/redis-5.0.8/redis.conf</code>加载配置文件，可以在bash配置文件里重命名一下，<code>alias redis=&#39;redis-server /usr/local/redis-5.0.8/redis.conf&#39;</code>，查看结果：配置文件已经加载；</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-050301.png" alt="image-20200516130301891"></p>
-<p>加载配置文件后，启动客户端<code>redis-cli</code> </p>
-<p>退出的话先执行shutdown再exit即可</p>
-<h4 id="5-uer-local权限问题"><a href="#5-uer-local权限问题" class="headerlink" title="5. &#x2F;uer&#x2F;local权限问题"></a>5. &#x2F;uer&#x2F;local权限问题</h4><p>默认安装以后，在Mac系统中就算是sudo用户也没有访问redis权限，退出的时候提示没有权限保存<code>saving: Permission denied</code>，手动修改一下文件夹权限<code>sudo chown -R $(whoami) /usr/local/redis-5.0.8</code>，👌</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>MarkDown语法简记</title>
-    <url>/2019/07/18/MarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0/</url>
-    <content><![CDATA[<p>常用的MarkDown语法</p>
-<span id="more"></span>
-<h2 id="初识MarkDown"><a href="#初识MarkDown" class="headerlink" title="初识MarkDown"></a>初识MarkDown</h2><p>作为一个未来的码农，越早接触这一语法越好。毕竟我是拿来来练习打字速度的（手动滑稽）。</p>
-<h2 id="列表（注意中间需要空格）"><a href="#列表（注意中间需要空格）" class="headerlink" title="列表（注意中间需要空格）"></a>列表（注意中间需要空格）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">1. 这是第一点<br>2. 这是第二点<br>-  前面一个点<br></code></pre></td></tr></table></figure>
-<p>显示效果：</p>
-<ol>
-<li>这是第一点</li>
-<li>这是第二点</li>
-</ol>
-<ul>
-<li>前面一个点</li>
-</ul>
-<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">**加粗**<br>*斜体*<br>~~删除线~~ (注意这是英文键盘下的~)<br>**注意**：当需要打出*时，在前面加入\即可<br>&gt;这是用来  \*演示\* 的 \_文本\_<br></code></pre></td></tr></table></figure>
-<p>效果：<br><strong>加粗</strong><br><em>斜体</em><br><del>删除线</del> (注意这是英文键盘下的~)<br><strong>注意</strong>：当需要打出*时，在前面加入\即可</p>
-<blockquote>
-<p>这是用来  *演示* 的 _文本_</p>
-</blockquote>
-<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h2><p>或者使用`代码片段&#96;</p>
-<p><code>if(a=b)</code></p>
-<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">***<br>---<br>___<br></code></pre></td></tr></table></figure>
-<h2 id="效果："><a href="#效果：" class="headerlink" title="效果：***"></a>效果：<br>***</h2><hr>
-<h2 id="超链接-需要用英文括号"><a href="#超链接-需要用英文括号" class="headerlink" title="超链接(需要用英文括号)"></a>超链接(需要用英文括号)</h2><p><a href="http://www.google.com/">Google</a><br><em>以下是中文括号显示效果：</em><br>[Google]（<a href="http://www.google.com/%EF%BC%89">http://www.google.com/）</a></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>插入图片的格式和插入<strong>超链接</strong>语法基本一致，只不过需要在前面加一个英文！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">![GitHub](https://avatars2.githubusercontent.com/u/3265208?v=3&amp;s=100 <span class="hljs-string">&quot;GitHub,Social Coding&quot;</span>)<br></code></pre></td></tr></table></figure>
-<p><img src="https://avatars2.githubusercontent.com/u/3265208?v=3&s=100" alt="GitHub" title="GitHub,Social Coding"></p>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>用前后各三个点来包含多行代码，在第一个三点后面加入代码的语言就可以高亮显示关键词：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;<br>print(<span class="hljs-string">&quot;a\n&quot;</span>);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c">使用  <span class="hljs-string">|   来分隔不同的单元格，使用 ---来分隔表头和其它行</span><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight md"><table><tr><td class="code"><pre><code class="hljs md">name | age<br>--- | ---<br>LearnShare | 12<br>Mike |  32<br></code></pre></td></tr></table></figure>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>age</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>LearnShare</td>
-<td>12</td>
-</tr>
-<tr>
-<td>Mike</td>
-<td>32</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu16.04.4安装与优化</title>
-    <url>/2020/02/15/Ubuntu16-04-4%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>由于我的 <strong>acer</strong> 不争气，好不容易装好的系统，关机以后自检找不到系统了，所以这篇文章暂时搁置，等我有了一台能顺利跑Ubuntu的电脑再来填坑。</p>
-<span id="more"></span>
-<h3 id="没错，这篇文章就是被搁置了。-2020-02-16"><a href="#没错，这篇文章就是被搁置了。-2020-02-16" class="headerlink" title="没错，这篇文章就是被搁置了。   2020-02-16"></a>没错，这篇文章就是被搁置了。   2020-02-16</h3><p>随手放一些效果图，很Mac有没有？<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E6%A1%8C%E9%9D%A2%E6%95%88%E6%9E%9C.png"></p>
-<center>桌面效果图</center>
-
-<p>下载主题包，链接:<a href="https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ">https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ</a>  密码:a9ne,根据文档内容放入对应文件夹</p>
-<blockquote>
-<p>安装gnome-tweak-tool,然后打开tweak工具，  </p>
-</blockquote>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E4%B8%BB%E9%A2%98.jpg"></p>
-<p>在安装Ubuntu的过程中，发现我的老电脑不堪重负，崩了。。。。<br>打算组装一台itx主机来装Linux</p>
-]]></content>
-  </entry>
-  <entry>
     <title>VsCode教程</title>
     <url>/2020/02/13/VsCode%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p><a href="https://juejin.im/post/5e440fd4e51d4527271e8b79">https://juejin.im/post/5e440fd4e51d4527271e8b79</a></p>
@@ -508,30 +573,6 @@
 </ol>
 <p>setting sync <a href="https://www.cnblogs.com/zzhaolei/p/12028241.html">插件的使用</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/05/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>思考</category>
-      </categories>
-      <tags>
-        <tag>感悟</tag>
-      </tags>
   </entry>
   <entry>
     <title>Mac上常用的软件&amp;插件</title>
@@ -629,11 +670,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2019/05/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>思考</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>全球IPv4地址耗尽，正式迈入IPv6时代！</title>
     <url>/2019/11/26/%E5%85%A8%E7%90%83IPv4%E5%9C%B0%E5%9D%80%E8%80%97%E5%B0%BD%EF%BC%8C%E6%AD%A3%E5%BC%8F%E8%BF%88%E5%85%A5IPv6%E6%97%B6%E4%BB%A3%EF%BC%81/</url>
     <content><![CDATA[<p>2019年11月25日 22:35分，是值得互联网纪念的一个时刻，全球IPv4地址已经全部耗尽！</p>
 <span id="more"></span>
 <p>IPv4中规定IP地址长度为32位二进制，最多能有2^32 个，大约42.9亿个，而IPv6采用128位地址长度，能达到2^128 个，这可是一个天文数字了，可以保证地球上每平方米分配1000多个地址。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>对【计算机】的新理解</title>
+    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<blockquote>
+<p>开端</p>
+</blockquote>
+<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
+ <span id="more"></span>
+
+<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
+<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
+<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
 ]]></content>
   </entry>
   <entry>
@@ -720,18 +799,54 @@
       </tags>
   </entry>
   <entry>
-    <title>对【计算机】的新理解</title>
-    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<blockquote>
-<p>开端</p>
-</blockquote>
-<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
- <span id="more"></span>
-
-<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
-<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
-<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
+    <title>树莓派+HomeBridge实现HomeKit控制智能家居</title>
+    <url>/2019/09/25/%E6%A0%91%E8%8E%93%E6%B4%BE+HomeBridge%E5%AE%9E%E7%8E%B0HomeKit%E6%8E%A7%E5%88%B6%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/</url>
+    <content><![CDATA[<p>米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“<strong>电视.app</strong>“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个<a href="https://github.com/nfarina/homebridge">HomeBridge</a>项目，通过树莓派做桥接，实现Siri控制米家智能设备。</p>
+<span id="more"></span>
+<p>##一、需要准备的东西</p>
+<ul>
+<li><p>支持 iOS10 的苹果设备（ iPhone 5 以上、 iPad mini 2 以上、 iPod 第六代以上）</p>
+</li>
+<li><p>小米多功能网关<strong>二代</strong>（ 注意：一定要二代！）</p>
+</li>
+<li><p>任意一个或多个支持 HomeKit 的设备：小米智能插座 ZigBee 版、小米人体传感器、小米门窗传感器、小米温湿度传感器、Yeelight智能灯泡、 Aqara墙壁开关等</p>
+</li>
+<li><p>树莓派 Raspberry Pi 3B+ （包含读卡器 &amp; 8 Gb 以上 TF 内存卡一张）</p>
+</li>
+<li><p>Mac Book一台（当然，win也可以） <br><br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90" alt="树莓派"><center>树莓派3B+</center></p>
+</li>
+</ul>
+<p>##二、GitHub项目地址</p>
+<ul>
+<li><a href="https://github.com/nfarina/homebridge">HomeBridge</a></li>
+<li><a href="https://github.com/YinHangCode/homebridge-mi-aqara">homebridge-mi-aqara</a></li>
+</ul>
+<p>##三、开始吧</p>
+<ol>
+<li>关于树莓派的安装和打开ssh可以先移步<a href="https://blog.csdn.net/u012313335/article/details/53405734">系统烧录</a>和<a href="https://blog.csdn.net/u012313335/article/details/73920256">打开ssh</a>；</li>
+<li>跟新gcc（可以使用pi用户也可以使用root用户，使用pi用户涉及权限问题请加sudo）<br><br><code>sudo apt-get install gcc</code></li>
+<li>接下来依次安装，如果你发现速度很慢，你可能需要更改中国软件源，参考文章：Raspbian <a href="http://shumeipai.nxez.com/2013/08/31/raspbian-chinese-software-source.html">中国软件源</a>,阿里云各个地方速度都不错。</li>
+</ol>
+<p><br><strong>a. 安装nodejs：</strong><br><br><code>sudo apt-get update</code><br><code>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</code><br><code>sudo apt-get install -y nodejs</code><br><code>sudo apt-get install -y build-essential</code><br><br><strong>b. 安装avahi：</strong><br><br><code>sudo apt-get install libavahi-compat-libdnssd-dev</code><br><br><strong>c. 安装HomeBridge：</strong><br><br><code>sudo npm install -g --unsafe-perm homebridge</code><br><br><strong>d. 安装homebridge-aqara：</strong><br><br><code>sudo npm install -g homebridge-aqara</code><br><br>安装部分完成！</p>
+<ol>
+<li>新建和配置config.json文件<br>返回主目录→创建” .homebridge “文件夹→进入” config.json “文件）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~ <br><span class="hljs-built_in">mkdir</span> .homebridge<br>vim .homebridge/config.json<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs">&lt;br&gt;复制以下代码稍作修改：
+</code></pre>
+<figure class="highlight prolog"><table><tr><td class="code"><pre><code class="hljs prolog">&#123;<br><br>    <span class="hljs-string">&quot;bridge&quot;</span>: &#123;<br><br>        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Homebridge&quot;</span>,<br><br>        <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;CC:22:3D:E3:CE:30&quot;</span>,<br><br>        <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">51826</span>,<br><br>        <span class="hljs-string">&quot;pin&quot;</span>: <span class="hljs-string">&quot;031-45-154&quot;</span><br><br>    &#125;, <br><br>    <span class="hljs-string">&quot;platforms&quot;</span>: [&#123;<br><br>        <span class="hljs-string">&quot;platform&quot;</span>: <span class="hljs-string">&quot;AqaraPlatform&quot;</span>,<br><br>        <span class="hljs-string">&quot;sid&quot;</span>: [<span class="hljs-string">&quot;【（密码A）网关MAC地址，去掉冒号，全部小写】&quot;</span>],<br><br>        <span class="hljs-string">&quot;password&quot;</span>: [<span class="hljs-string">&quot;【（密码B）网关局域网密码】&quot;</span>]<br><br>    &#125;]<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><br>其中 name 是你在 iOS 家庭 App 上可以看到的桥接器的名字，建议就叫 Homebridge，username 需要是类似 MAC 的格式，是可以随意填写，只要符合格式，建议不需要更改了。port 随意，确保不要被占用。pin 随意，为密码，需要是 8 位数字，格式为 xxx-xx-xxx，比如 123-45-678。下面的 platform 也是无所谓修改不修改，关键是<strong>sid</strong>和<strong>password</strong>，这就需要在手机上操作了。<br>在手机上打开米家 App，点击你的网关，右上角三个 ···，并狂按底部空白区域，直到出现局域网通信协议和网管信息为止。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019-09-25%2F1569411561.png"><br>点击局域网通信协议，打开，并刷新一个密码，改为全部小写，（安卓手机刷出来是小写），记录这段文字（密码 A ）。<br><br>点击网关信息，找到 mac: 后的文字，如本截图中的 28:6C:07:85:B3:0E，去掉 : 并全部改为小写，也记录这段文字（密码 B ），如本截图中的文字处理后的结果就是 f0b429cc6168。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/15694117001892.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>第一个密码 A 就是你的 sid，第二个密码 B 就是 password。如果你有多个网关用逗号链接，比如 cb30a01c1bcc4b3c, dc41b12d2cdd5c4d, password 同理。在刚刚树莓派编辑的 config.json 输入上面获得的密码，保存退出。（vim的使用自行Google）</p>
+<ol>
+<li>运行homebridge<br>直接在命令行输入<code>homebridge</code>就能运行；有时出现错误会自动关闭，错误原因有很多，一般就是端口占用，或者mac地址和密码填写错误，仔细检查，如果不行的话，清除缓存，删除连接信息重新运行homebridge：<br><strong>操作方法</strong><br>a. 结束HomeBridge进程，如下：<br><code>pkill -9 homebridge</code><br>b. 进入config.json所在的文件夹，例如：<br><code>cd /root/.homebridge</code><br>c. 删除文件夹下persist文件夹，例如：<br><code>rm -rf persist</code><br>d. 重启Homebridge进程，例如：<br><code>homebridge</code><br>掏出iPhone，打开家庭app，点击添加配件，扫描二维码或者手动输入你设置的八位密码就可以配对成功，操作完成。</li>
+<li>最后的最后，你会发现，HomeBridge 停止运行了。我们不可能在电脑上挂着终端使树莓派一直运行这个服务，因此还有最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。事实上, 树莓派文档 Scheduling tasks with Cron 给出的方法是最简单并且方便以后配置别的程序。<br>先安装 cron<br><code>sudo apt-get install gnome-schedule</code><br>然后配置 cron.<br><code>crontab -e</code><br>在最下方添加<code>@reboot homebridge &amp;</code>即可完成开机启动 homebridge 的配置。<br>现在，你可以重启一下树莓派，运行<code>ps -ef | grep homebridge</code>看看 HomeBridge 服务是否正常运行.</li>
+</ol>
+<p>最后来感叹一下apple的生态系统，当我成功配置后，我能够在iPhone、ipad、mac、甚至是Apple Watch上控制小米家居，实在激动。</p>
+<p><strong>注意</strong>：树莓派必须通过网线连接，不能通过Wi-Fi连接！</p>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://www.jianshu.com/p/ec79b2711bd5">树莓派进阶（一）：借助树莓派与 HomeBridge，从米家到 HomeKit</a><br><a href="https://sspai.com/post/38358">从米家到 HomeKit，你只需要一个树莓派</a><br><a href="https://homekit.loli.ren/docs/show/3">HomeBridge教程 </a></p>
 ]]></content>
+      <tags>
+        <tag>树莓派</tag>
+      </tags>
   </entry>
   <entry>
     <title>提问的智慧</title>
@@ -1149,56 +1264,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>树莓派+HomeBridge实现HomeKit控制智能家居</title>
-    <url>/2019/09/25/%E6%A0%91%E8%8E%93%E6%B4%BE+HomeBridge%E5%AE%9E%E7%8E%B0HomeKit%E6%8E%A7%E5%88%B6%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/</url>
-    <content><![CDATA[<p>米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“<strong>电视.app</strong>“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个<a href="https://github.com/nfarina/homebridge">HomeBridge</a>项目，通过树莓派做桥接，实现Siri控制米家智能设备。</p>
-<span id="more"></span>
-<p>##一、需要准备的东西</p>
-<ul>
-<li><p>支持 iOS10 的苹果设备（ iPhone 5 以上、 iPad mini 2 以上、 iPod 第六代以上）</p>
-</li>
-<li><p>小米多功能网关<strong>二代</strong>（ 注意：一定要二代！）</p>
-</li>
-<li><p>任意一个或多个支持 HomeKit 的设备：小米智能插座 ZigBee 版、小米人体传感器、小米门窗传感器、小米温湿度传感器、Yeelight智能灯泡、 Aqara墙壁开关等</p>
-</li>
-<li><p>树莓派 Raspberry Pi 3B+ （包含读卡器 &amp; 8 Gb 以上 TF 内存卡一张）</p>
-</li>
-<li><p>Mac Book一台（当然，win也可以） <br><br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/4518047ab0da64eede17368.gif?image/auto-orient,1/resize,p_89/quality,q_90" alt="树莓派"><center>树莓派3B+</center></p>
-</li>
-</ul>
-<p>##二、GitHub项目地址</p>
-<ul>
-<li><a href="https://github.com/nfarina/homebridge">HomeBridge</a></li>
-<li><a href="https://github.com/YinHangCode/homebridge-mi-aqara">homebridge-mi-aqara</a></li>
-</ul>
-<p>##三、开始吧</p>
-<ol>
-<li>关于树莓派的安装和打开ssh可以先移步<a href="https://blog.csdn.net/u012313335/article/details/53405734">系统烧录</a>和<a href="https://blog.csdn.net/u012313335/article/details/73920256">打开ssh</a>；</li>
-<li>跟新gcc（可以使用pi用户也可以使用root用户，使用pi用户涉及权限问题请加sudo）<br><br><code>sudo apt-get install gcc</code></li>
-<li>接下来依次安装，如果你发现速度很慢，你可能需要更改中国软件源，参考文章：Raspbian <a href="http://shumeipai.nxez.com/2013/08/31/raspbian-chinese-software-source.html">中国软件源</a>,阿里云各个地方速度都不错。</li>
-</ol>
-<p><br><strong>a. 安装nodejs：</strong><br><br><code>sudo apt-get update</code><br><code>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</code><br><code>sudo apt-get install -y nodejs</code><br><code>sudo apt-get install -y build-essential</code><br><br><strong>b. 安装avahi：</strong><br><br><code>sudo apt-get install libavahi-compat-libdnssd-dev</code><br><br><strong>c. 安装HomeBridge：</strong><br><br><code>sudo npm install -g --unsafe-perm homebridge</code><br><br><strong>d. 安装homebridge-aqara：</strong><br><br><code>sudo npm install -g homebridge-aqara</code><br><br>安装部分完成！</p>
-<ol>
-<li>新建和配置config.json文件<br>返回主目录→创建” .homebridge “文件夹→进入” config.json “文件）</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> ~ <br><span class="hljs-built_in">mkdir</span> .homebridge<br>vim .homebridge/config.json<br></code></pre></td></tr></table></figure>
-<pre><code class="hljs">&lt;br&gt;复制以下代码稍作修改：
-</code></pre>
-<figure class="highlight prolog"><table><tr><td class="code"><pre><code class="hljs prolog">&#123;<br><br>    <span class="hljs-string">&quot;bridge&quot;</span>: &#123;<br><br>        <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Homebridge&quot;</span>,<br><br>        <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;CC:22:3D:E3:CE:30&quot;</span>,<br><br>        <span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">51826</span>,<br><br>        <span class="hljs-string">&quot;pin&quot;</span>: <span class="hljs-string">&quot;031-45-154&quot;</span><br><br>    &#125;, <br><br>    <span class="hljs-string">&quot;platforms&quot;</span>: [&#123;<br><br>        <span class="hljs-string">&quot;platform&quot;</span>: <span class="hljs-string">&quot;AqaraPlatform&quot;</span>,<br><br>        <span class="hljs-string">&quot;sid&quot;</span>: [<span class="hljs-string">&quot;【（密码A）网关MAC地址，去掉冒号，全部小写】&quot;</span>],<br><br>        <span class="hljs-string">&quot;password&quot;</span>: [<span class="hljs-string">&quot;【（密码B）网关局域网密码】&quot;</span>]<br><br>    &#125;]<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><br>其中 name 是你在 iOS 家庭 App 上可以看到的桥接器的名字，建议就叫 Homebridge，username 需要是类似 MAC 的格式，是可以随意填写，只要符合格式，建议不需要更改了。port 随意，确保不要被占用。pin 随意，为密码，需要是 8 位数字，格式为 xxx-xx-xxx，比如 123-45-678。下面的 platform 也是无所谓修改不修改，关键是<strong>sid</strong>和<strong>password</strong>，这就需要在手机上操作了。<br>在手机上打开米家 App，点击你的网关，右上角三个 ···，并狂按底部空白区域，直到出现局域网通信协议和网管信息为止。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019-09-25%2F1569411561.png"><br>点击局域网通信协议，打开，并刷新一个密码，改为全部小写，（安卓手机刷出来是小写），记录这段文字（密码 A ）。<br><br>点击网关信息，找到 mac: 后的文字，如本截图中的 28:6C:07:85:B3:0E，去掉 : 并全部改为小写，也记录这段文字（密码 B ），如本截图中的文字处理后的结果就是 f0b429cc6168。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/25/15694117001892.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>第一个密码 A 就是你的 sid，第二个密码 B 就是 password。如果你有多个网关用逗号链接，比如 cb30a01c1bcc4b3c, dc41b12d2cdd5c4d, password 同理。在刚刚树莓派编辑的 config.json 输入上面获得的密码，保存退出。（vim的使用自行Google）</p>
-<ol>
-<li>运行homebridge<br>直接在命令行输入<code>homebridge</code>就能运行；有时出现错误会自动关闭，错误原因有很多，一般就是端口占用，或者mac地址和密码填写错误，仔细检查，如果不行的话，清除缓存，删除连接信息重新运行homebridge：<br><strong>操作方法</strong><br>a. 结束HomeBridge进程，如下：<br><code>pkill -9 homebridge</code><br>b. 进入config.json所在的文件夹，例如：<br><code>cd /root/.homebridge</code><br>c. 删除文件夹下persist文件夹，例如：<br><code>rm -rf persist</code><br>d. 重启Homebridge进程，例如：<br><code>homebridge</code><br>掏出iPhone，打开家庭app，点击添加配件，扫描二维码或者手动输入你设置的八位密码就可以配对成功，操作完成。</li>
-<li>最后的最后，你会发现，HomeBridge 停止运行了。我们不可能在电脑上挂着终端使树莓派一直运行这个服务，因此还有最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。事实上, 树莓派文档 Scheduling tasks with Cron 给出的方法是最简单并且方便以后配置别的程序。<br>先安装 cron<br><code>sudo apt-get install gnome-schedule</code><br>然后配置 cron.<br><code>crontab -e</code><br>在最下方添加<code>@reboot homebridge &amp;</code>即可完成开机启动 homebridge 的配置。<br>现在，你可以重启一下树莓派，运行<code>ps -ef | grep homebridge</code>看看 HomeBridge 服务是否正常运行.</li>
-</ol>
-<p>最后来感叹一下apple的生态系统，当我成功配置后，我能够在iPhone、ipad、mac、甚至是Apple Watch上控制小米家居，实在激动。</p>
-<p><strong>注意</strong>：树莓派必须通过网线连接，不能通过Wi-Fi连接！</p>
-<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="https://www.jianshu.com/p/ec79b2711bd5">树莓派进阶（一）：借助树莓派与 HomeBridge，从米家到 HomeKit</a><br><a href="https://sspai.com/post/38358">从米家到 HomeKit，你只需要一个树莓派</a><br><a href="https://homekit.loli.ren/docs/show/3">HomeBridge教程 </a></p>
-]]></content>
-      <tags>
-        <tag>树莓派</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>测试文章</title>
     <url>/2026/01/19/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<p>这是一篇测试文章，用于验证Hexo博客是否正常工作。</p>
@@ -1218,6 +1283,52 @@
         <tag>测试</tag>
         <tag>Hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>解决Mac中Terminal无法访问github</title>
+    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
+    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
+<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
+<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
+<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># github</span><br> 140.82.113.4 www.github.com<br></code></pre></td></tr></table></figure>
+<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
+<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global http.https://github.com.proxy https://127.0.0.1:1080<br>git config --global https.https://github.com.proxy https://127.0.0.1:1080<br></code></pre></td></tr></table></figure>
+<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global --<span class="hljs-built_in">unset</span> http.proxy<br>git config --global --<span class="hljs-built_in">unset</span> https.proxy<br></code></pre></td></tr></table></figure>
+<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
+]]></content>
+      <categories>
+        <category>问题</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>那些句子</title>
+    <url>/2019/09/26/%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/</url>
+    <content><![CDATA[<ol>
+<li>七岁的那年，抓住那只蝉，以为能抓住了夏天。  –<a href="https://music.apple.com/cn/album/%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BF%AB%E4%B9%90/1098553403?i=1098553466">《如烟》</a></li>
+<li></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>阿里云OSS乌龙</title>
+    <url>/2019/09/27/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B9%8C%E9%BE%99/</url>
+    <content><![CDATA[<p>昨天，突然接到阿里云的短信，我前天才开的阿里云oss欠费停机了？？？<img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/imgeab4a9a03e8d1.jpeg?image/auto-orient,1/resize,p_89/quality,q_90" alt="IMG_EAB4A9A03E8D-1"></p>
+<center>停机短信</center>
+excuse me？ 我才开通一天啊喂！后来我迅速查看了使用详情，![使用明细](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/shi-yong-ming-xi.png?image/auto-orient,1/resize,p_89/quality,q_90)
+看到了**云服务器ECS-快照**的字样，我立马想到自己的ECS，是不是设置了自动快照？？因为前面的流量情况是一样的，是不是它自己一直在自动备份？？可是我查看了自己所有的服务器，并没有开快照啊。![服务器没有开通快照](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/fu-wu-qi-mei-you-kai-tong-kuai-zhao.png?image/auto-orient,1/resize,p_89/quality,q_90)
+无奈之下，我只能联系客服（不得不说阿里爸爸服务是真棒！）晚上十一点多还有在线客服也是感动了一把。最终在与客服耐心的沟通后，仍然没有找到问题所在。直到最后，我忽然想起新建bucket时候的两个条件：![](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/15695594696934.jpg?image/auto-orient,1/resize,p_89/quality,q_90)
+**存储包**和**流量包**！！！我购买的是存储包而欠费的原因竟然是流量包……这一发现让我哭笑不得，原来问题它就不出在那40G的存储包上面，而所谓的快照原来就是我已经使用的空间，最终，当我交上欠费的¥0.1以后，终于又能打开markdown图片了。
+
+<h2 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h2><p>经过这一次的事件，我越发明白了阅读官方文档的重要性，其实这些内容在官方给的QA里一般能找到，但是习惯互联网捷径的我更愿意直接google，这不失为解决方法的一种途径，但是，有时候可能官方给出的文档更加注重问题本身，更加明了，前提是你能够静下心来仔细阅读一下。包括昨天我还没有解决的GitHub密匙问题（当初搭建博客时候，把密匙配置在了graylogo&#x2F;gray.github.io仓库下，导致其他仓库push时候失败了，官方文档提供的ssh连接很详细，但可惜的是全是英文……纵使如此，一些词汇还是相对简单的，加上Google翻译，还是能看懂的。所以，啥也不说了，读文档，解决问题去吧。</p>
+]]></content>
   </entry>
   <entry>
     <title>通过Hexo + Github 搭建博客</title>
@@ -1247,52 +1358,6 @@
       </categories>
       <tags>
         <tag>感悟</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿里云OSS乌龙</title>
-    <url>/2019/09/27/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B9%8C%E9%BE%99/</url>
-    <content><![CDATA[<p>昨天，突然接到阿里云的短信，我前天才开的阿里云oss欠费停机了？？？<img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/imgeab4a9a03e8d1.jpeg?image/auto-orient,1/resize,p_89/quality,q_90" alt="IMG_EAB4A9A03E8D-1"></p>
-<center>停机短信</center>
-excuse me？ 我才开通一天啊喂！后来我迅速查看了使用详情，![使用明细](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/shi-yong-ming-xi.png?image/auto-orient,1/resize,p_89/quality,q_90)
-看到了**云服务器ECS-快照**的字样，我立马想到自己的ECS，是不是设置了自动快照？？因为前面的流量情况是一样的，是不是它自己一直在自动备份？？可是我查看了自己所有的服务器，并没有开快照啊。![服务器没有开通快照](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/fu-wu-qi-mei-you-kai-tong-kuai-zhao.png?image/auto-orient,1/resize,p_89/quality,q_90)
-无奈之下，我只能联系客服（不得不说阿里爸爸服务是真棒！）晚上十一点多还有在线客服也是感动了一把。最终在与客服耐心的沟通后，仍然没有找到问题所在。直到最后，我忽然想起新建bucket时候的两个条件：![](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/15695594696934.jpg?image/auto-orient,1/resize,p_89/quality,q_90)
-**存储包**和**流量包**！！！我购买的是存储包而欠费的原因竟然是流量包……这一发现让我哭笑不得，原来问题它就不出在那40G的存储包上面，而所谓的快照原来就是我已经使用的空间，最终，当我交上欠费的¥0.1以后，终于又能打开markdown图片了。
-
-<h2 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h2><p>经过这一次的事件，我越发明白了阅读官方文档的重要性，其实这些内容在官方给的QA里一般能找到，但是习惯互联网捷径的我更愿意直接google，这不失为解决方法的一种途径，但是，有时候可能官方给出的文档更加注重问题本身，更加明了，前提是你能够静下心来仔细阅读一下。包括昨天我还没有解决的GitHub密匙问题（当初搭建博客时候，把密匙配置在了graylogo&#x2F;gray.github.io仓库下，导致其他仓库push时候失败了，官方文档提供的ssh连接很详细，但可惜的是全是英文……纵使如此，一些词汇还是相对简单的，加上Google翻译，还是能看懂的。所以，啥也不说了，读文档，解决问题去吧。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>那些句子</title>
-    <url>/2019/09/26/%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/</url>
-    <content><![CDATA[<ol>
-<li>七岁的那年，抓住那只蝉，以为能抓住了夏天。  –<a href="https://music.apple.com/cn/album/%E4%BD%A0%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%BF%AB%E4%B9%90/1098553403?i=1098553466">《如烟》</a></li>
-<li></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>解决Mac中Terminal无法访问github</title>
-    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
-    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
-<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
-<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
-<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># github</span><br> 140.82.113.4 www.github.com<br></code></pre></td></tr></table></figure>
-<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
-<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global http.https://github.com.proxy https://127.0.0.1:1080<br>git config --global https.https://github.com.proxy https://127.0.0.1:1080<br></code></pre></td></tr></table></figure>
-<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global --<span class="hljs-built_in">unset</span> http.proxy<br>git config --global --<span class="hljs-built_in">unset</span> https.proxy<br></code></pre></td></tr></table></figure>
-<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
-]]></content>
-      <categories>
-        <category>问题</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
 </search>
