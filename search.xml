@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Mac安装Redis5.0.8</title>
+    <url>/2020/05/16/Mac%E5%AE%89%E8%A3%85Redis5-0-8/</url>
+    <content><![CDATA[<p>在用SpeingBoot做邮箱验证的时候，需要用到<code>Redis</code>，所以在Mac和CentOs中都安装了<code>redis5.0.8</code>：</p>
+<span id="more"></span>
+
+<h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h4><p>redis<a href="https://redis.io/">下载地址</a>，选择download，然后可以看到5.0.8的安装包：</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045020.png" alt="Screen Shot 2020-05-16 at 12.49.14"></p>
+<p>或者，可以通过wget安装<code>wget http://download.redis.io/releases/redis-5.0.8.tar.gz</code></p>
+<h4 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h4><ul>
+<li><p>解压到安装目录<code>tar zxvf redis-5.0.8.tar.gz /usr/local</code></p>
+<blockquote>
+<p>注意，如果没有权限请加上sudo</p>
+</blockquote>
+</li>
+<li><p>切换到解压好的目录<code>cd /usr/local/redis-5.0.8</code>，执行make命令，大概两分钟后安装完成</p>
+</li>
+<li><p>执行<code>make install</code>，作用是在<code>/usr/local/bi</code>n里产生一些文件(命令)，比如<code>redis-server</code>、<code>redis-cli</code>等，如果不执行make install，那么键入启动服务命令redis-server时会提示“该命令不存在”，redis服务就无法启动。我们查看一下：</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045716.png" alt="image-20200516125715391"></p>
+</li>
+</ul>
+<h4 id="3-修改配置文件redis-conf"><a href="#3-修改配置文件redis-conf" class="headerlink" title="3. 修改配置文件redis.conf"></a>3. 修改配置文件redis.conf</h4><p>修改redis.conf，将GENERAL里的no改成yes（默认redis.conf里守护进程没有被开启）</p>
+<p>(注：这个配置文件可能在 &#x2F;usr&#x2F;redis&#x2F;redis-5.0.8&#x2F;redis.conf，或者&#x2F;etc&#x2F;redis.conf)</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045936.png" alt="image-20200516125936103"></p>
+<h4 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h4><p>执行<code>to redis-server /usr/local/redis-5.0.8/redis.conf</code>加载配置文件，可以在bash配置文件里重命名一下，<code>alias redis=&#39;redis-server /usr/local/redis-5.0.8/redis.conf&#39;</code>，查看结果：配置文件已经加载；</p>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-050301.png" alt="image-20200516130301891"></p>
+<p>加载配置文件后，启动客户端<code>redis-cli</code> </p>
+<p>退出的话先执行shutdown再exit即可</p>
+<h4 id="5-uer-local权限问题"><a href="#5-uer-local权限问题" class="headerlink" title="5. &#x2F;uer&#x2F;local权限问题"></a>5. &#x2F;uer&#x2F;local权限问题</h4><p>默认安装以后，在Mac系统中就算是sudo用户也没有访问redis权限，退出的时候提示没有权限保存<code>saving: Permission denied</code>，手动修改一下文件夹权限<code>sudo chown -R $(whoami) /usr/local/redis-5.0.8</code>，👌</p>
+]]></content>
+  </entry>
+  <entry>
     <title>2019前端面试题总汇</title>
     <url>/2020/02/25/2019%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E6%B1%87/</url>
     <content><![CDATA[<p>#前端面试题</p>
@@ -377,37 +408,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Mac安装Redis5.0.8</title>
-    <url>/2020/05/16/Mac%E5%AE%89%E8%A3%85Redis5-0-8/</url>
-    <content><![CDATA[<p>在用SpeingBoot做邮箱验证的时候，需要用到<code>Redis</code>，所以在Mac和CentOs中都安装了<code>redis5.0.8</code>：</p>
-<span id="more"></span>
-
-<h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h4><p>redis<a href="https://redis.io/">下载地址</a>，选择download，然后可以看到5.0.8的安装包：</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045020.png" alt="Screen Shot 2020-05-16 at 12.49.14"></p>
-<p>或者，可以通过wget安装<code>wget http://download.redis.io/releases/redis-5.0.8.tar.gz</code></p>
-<h4 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h4><ul>
-<li><p>解压到安装目录<code>tar zxvf redis-5.0.8.tar.gz /usr/local</code></p>
-<blockquote>
-<p>注意，如果没有权限请加上sudo</p>
-</blockquote>
-</li>
-<li><p>切换到解压好的目录<code>cd /usr/local/redis-5.0.8</code>，执行make命令，大概两分钟后安装完成</p>
-</li>
-<li><p>执行<code>make install</code>，作用是在<code>/usr/local/bi</code>n里产生一些文件(命令)，比如<code>redis-server</code>、<code>redis-cli</code>等，如果不执行make install，那么键入启动服务命令redis-server时会提示“该命令不存在”，redis服务就无法启动。我们查看一下：</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045716.png" alt="image-20200516125715391"></p>
-</li>
-</ul>
-<h4 id="3-修改配置文件redis-conf"><a href="#3-修改配置文件redis-conf" class="headerlink" title="3. 修改配置文件redis.conf"></a>3. 修改配置文件redis.conf</h4><p>修改redis.conf，将GENERAL里的no改成yes（默认redis.conf里守护进程没有被开启）</p>
-<p>(注：这个配置文件可能在 &#x2F;usr&#x2F;redis&#x2F;redis-5.0.8&#x2F;redis.conf，或者&#x2F;etc&#x2F;redis.conf)</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-045936.png" alt="image-20200516125936103"></p>
-<h4 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h4><p>执行<code>to redis-server /usr/local/redis-5.0.8/redis.conf</code>加载配置文件，可以在bash配置文件里重命名一下，<code>alias redis=&#39;redis-server /usr/local/redis-5.0.8/redis.conf&#39;</code>，查看结果：配置文件已经加载；</p>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-05-16-050301.png" alt="image-20200516130301891"></p>
-<p>加载配置文件后，启动客户端<code>redis-cli</code> </p>
-<p>退出的话先执行shutdown再exit即可</p>
-<h4 id="5-uer-local权限问题"><a href="#5-uer-local权限问题" class="headerlink" title="5. &#x2F;uer&#x2F;local权限问题"></a>5. &#x2F;uer&#x2F;local权限问题</h4><p>默认安装以后，在Mac系统中就算是sudo用户也没有访问redis权限，退出的时候提示没有权限保存<code>saving: Permission denied</code>，手动修改一下文件夹权限<code>sudo chown -R $(whoami) /usr/local/redis-5.0.8</code>，👌</p>
-]]></content>
-  </entry>
-  <entry>
     <title>MarkDown语法简记</title>
     <url>/2019/07/18/MarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0/</url>
     <content><![CDATA[<p>常用的MarkDown语法</p>
@@ -482,6 +482,30 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2019/05/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>思考</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VsCode教程</title>
     <url>/2020/02/13/VsCode%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p><a href="https://juejin.im/post/5e440fd4e51d4527271e8b79">https://juejin.im/post/5e440fd4e51d4527271e8b79</a></p>
@@ -507,6 +531,27 @@
 <li>安装 小图标插件，插件搜索栏搜索 vscode-icons，安装即可，会弹出一个小窗口让你选择图标主题选择刚才安装好的即可</li>
 </ol>
 <p>setting sync <a href="https://www.cnblogs.com/zzhaolei/p/12028241.html">插件的使用</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>用Mweb发布Hexo博客</title>
+    <url>/2019/04/10/test/</url>
+    <content><![CDATA[<h2 id="测试一下七牛云图床功能"><a href="#测试一下七牛云图床功能" class="headerlink" title="测试一下七牛云图床功能"></a>测试一下七牛云图床功能</h2><p><img src="http://grayblog.cn.qiniudns.com/mweb/gray.png" alt="gray"></p>
+<h2 id="测试阿里云图床功能"><a href="#测试阿里云图床功能" class="headerlink" title="测试阿里云图床功能"></a>测试阿里云图床功能</h2><p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950596523920.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>能够正常上传图片</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全球IPv4地址耗尽，正式迈入IPv6时代！</title>
+    <url>/2019/11/26/%E5%85%A8%E7%90%83IPv4%E5%9C%B0%E5%9D%80%E8%80%97%E5%B0%BD%EF%BC%8C%E6%AD%A3%E5%BC%8F%E8%BF%88%E5%85%A5IPv6%E6%97%B6%E4%BB%A3%EF%BC%81/</url>
+    <content><![CDATA[<p>2019年11月25日 22:35分，是值得互联网纪念的一个时刻，全球IPv4地址已经全部耗尽！</p>
+<span id="more"></span>
+<p>IPv4中规定IP地址长度为32位二进制，最多能有2^32 个，大约42.9亿个，而IPv6采用128位地址长度，能达到2^128 个，这可是一个天文数字了，可以保证地球上每平方米分配1000多个地址。</p>
 ]]></content>
   </entry>
   <entry>
@@ -592,65 +637,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/05/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>思考</category>
-      </categories>
-      <tags>
-        <tag>感悟</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用Mweb发布Hexo博客</title>
-    <url>/2019/04/10/test/</url>
-    <content><![CDATA[<h2 id="测试一下七牛云图床功能"><a href="#测试一下七牛云图床功能" class="headerlink" title="测试一下七牛云图床功能"></a>测试一下七牛云图床功能</h2><p><img src="http://grayblog.cn.qiniudns.com/mweb/gray.png" alt="gray"></p>
-<h2 id="测试阿里云图床功能"><a href="#测试阿里云图床功能" class="headerlink" title="测试阿里云图床功能"></a>测试阿里云图床功能</h2><p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950596523920.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>能够正常上传图片</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>全球IPv4地址耗尽，正式迈入IPv6时代！</title>
-    <url>/2019/11/26/%E5%85%A8%E7%90%83IPv4%E5%9C%B0%E5%9D%80%E8%80%97%E5%B0%BD%EF%BC%8C%E6%AD%A3%E5%BC%8F%E8%BF%88%E5%85%A5IPv6%E6%97%B6%E4%BB%A3%EF%BC%81/</url>
-    <content><![CDATA[<p>2019年11月25日 22:35分，是值得互联网纪念的一个时刻，全球IPv4地址已经全部耗尽！</p>
-<span id="more"></span>
-<p>IPv4中规定IP地址长度为32位二进制，最多能有2^32 个，大约42.9亿个，而IPv6采用128位地址长度，能达到2^128 个，这可是一个天文数字了，可以保证地球上每平方米分配1000多个地址。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>对【计算机】的新理解</title>
-    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<blockquote>
-<p>开端</p>
-</blockquote>
-<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
- <span id="more"></span>
-
-<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
-<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
-<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
-]]></content>
-  </entry>
-  <entry>
     <title>树莓派+HomeBridge实现HomeKit控制智能家居</title>
     <url>/2019/09/25/%E6%A0%91%E8%8E%93%E6%B4%BE+HomeBridge%E5%AE%9E%E7%8E%B0HomeKit%E6%8E%A7%E5%88%B6%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/</url>
     <content><![CDATA[<p>米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“<strong>电视.app</strong>“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个<a href="https://github.com/nfarina/homebridge">HomeBridge</a>项目，通过树莓派做桥接，实现Siri控制米家智能设备。</p>
@@ -699,6 +685,178 @@
       <tags>
         <tag>树莓派</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>小米路由器青春版刷Padavan固件</title>
+    <url>/2019/01/26/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E9%9D%92%E6%98%A5%E7%89%88%E5%88%B7Padavan%E5%9B%BA%E4%BB%B6/</url>
+    <content><![CDATA[<blockquote>
+<p>刷机是一种乐趣，大学宿舍晚上断电，正好手上有一个<strong>小米路由器青春版</strong>，USB充电宝供电，巴掌大小，放在宿舍简直合适不过了。最最最厉害的是可以刷潘多拉固件，简直不要太好！<br>（这篇文章是以前Wordpress上写的，后来荒废了，但是这篇文章留在了MWeb的文件夹里，<strong>感谢MarkDown！</strong>）</p>
+</blockquote>
+<span id="more"></span>
+
+
+<h2 id="准备："><a href="#准备：" class="headerlink" title="准备："></a>准备：</h2><ul>
+<li>小米路由器青春版 *1</li>
+<li>网线 *1</li>
+<li>电脑(Mac 或 Windows) *1</li>
+<li>刷机所需的固件，软件（Putty和WINSCP自行百度下载）</li>
+</ul>
+<hr>
+<h2 id="基本思路："><a href="#基本思路：" class="headerlink" title="基本思路："></a>基本思路：</h2><blockquote>
+<ol>
+<li>首先确保路由器ROM版本为2.0，如果不是，降级到2.0或刷入开发版miwifi_r1cl_all_59371_2.1.26.bin版本(<a href="http://bigota.miwifi.com/xiaoqiang/rom/r1cl/miwifi_r1cl_all_59371_2.1.26.bin">点击下载</a>这个开发版）</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>修改网页地址的方式来篡改web管理密码和root密码</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>使用telnet命令进去备份各个分区(非必须)</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>刷入breed</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>刷入固件（潘多拉或梅林）</li>
+</ol>
+</blockquote>
+<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><ol>
+<li><p>小米路由器青春版是没有官方通道开启ssh的，其它版本路由器可以在<a href="http://www1.miwifi.com/miwifi_open.html">miwifi开放平台</a>查看。<br>在网友的帖子里，我们可以直接修改路由器的请求地址的特定参数，改变系统参数，从而开启ssh。</p>
+<blockquote>
+<p>首先确保路由器ROM版本为2.0，如果不是，降级到2.0或刷入开发版miwifi_r1cl_all_59371_2.1.26.bin版本(<a href="http://bigota.miwifi.com/xiaoqiang/rom/r1cl/miwifi_r1cl_all_59371_2.1.26.bin">点击下载</a>这个开发版）<br>降级方法：由官方的路由管理界面，上传本ROM包，自动升级即可</p>
+</blockquote>
+</li>
+<li><p>在浏览器地址栏输入192.168.31.1，输入管理员密码（如果忘记了的话按住路由器的reset键10s以上重置系统，设置账户密码再做上面的操作），地址栏会多出一部分参数，比如我的是：</p>
+</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">192.168</span>.<span class="hljs-number">31.1</span><span class="hljs-regexp">/cgi-bin/</span>luci<span class="hljs-regexp">/;stok=6bb3936a88b4df625ded00d17be3911a/</span>web/home<span class="hljs-comment">#router</span><br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>更改管理员密码和root密码<br>将上面的地址中的 <strong>&#x2F;web&#x2F;home#router</strong> 改为 <strong>&#x2F;api&#x2F;xqsystem&#x2F;set_name_password?oldPwd&#x3D;旧密码&amp;newPwd&#x3D;新密码</strong>  ，然后确定，看网页的返回值，如果是**{“code”:0}**就表示修改成功，可以接着下一步。</p>
+</li>
+<li><p>把 <strong>&#x2F;web&#x2F;home#router</strong> 改为 <strong>&#x2F;api&#x2F;xqnetwork&#x2F;set_wifi_ap?ssid&#x3D;xiaomi&amp;encryption&#x3D;NONE&amp;enctype&#x3D;NONE&amp;channel&#x3D;1%3B%2Fusr%2Fsbin%2Ftelnetd</strong> ，然后查看返回的JSON数据 <strong>{“msg”:”未能连接到指定WiFi(Probe timeout)”,”code”:1616}</strong> ，就可以用telnet方式登录路由器。</p>
+</li>
+<li><p>用telnet方式登录路由器<br>下载一个Putty 。然后打开选填以下参数，连接类型：telnet;主机名称：192.168.31.1.点击连接。可以看到看到login，账户输入root，密码则为以上第二步中修改的新密码。然后依次执行下面的三条指令：</p>
+</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="code"><pre><code class="hljs swift">sed <span class="hljs-operator">-</span>i <span class="hljs-string">&quot;:x;N;s/if \[.*\; then<span class="hljs-subst">\n</span>.*return 0<span class="hljs-subst">\n</span>.*fi/#tb/;b x&quot;</span> <span class="hljs-regexp">/etc/</span><span class="hljs-keyword">init</span>.d<span class="hljs-operator">/</span>dropbear <br>   <span class="hljs-regexp">/etc/</span><span class="hljs-keyword">init</span>.d<span class="hljs-operator">/</span>dropbear start <br>   nvram <span class="hljs-keyword">set</span> ssh_en<span class="hljs-operator">=</span><span class="hljs-number">1</span>; nvram commit  <br></code></pre></td></tr></table></figure>
+<p>此时我们已经开放ssh，可以用ssh方式登录路由器了。</p>
+<ol start="6">
+<li>刷入breed<br>WINSCP 选择SCP协议 复制breed.bin 到&#x2F;tmp<br>输入以下命令刷入，刷入后，机器会自动重启：</li>
+</ol>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><code class="hljs gradle">mtd -r <span class="hljs-keyword">write</span> <span class="hljs-regexp">/tmp/</span>breed.bin Bootloader<br></code></pre></td></tr></table></figure>
+<ol start="7">
+<li><p>进入breed控制台<br>先给路由器断电，再按住路由器reset键，再给路由器送电，等到路由器灯闪的时候，松开reset键，用一根网线将路由器的WAN口和电脑相连，在电脑上在浏览器中输入192.168.1.1，进入breed控制台了。</p>
+</li>
+<li><p>刷入固件<br>可供选择的固件还是很多的，在这里我找了一个<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">padavan</a>,这固件是从Padavan固件源码搬运源码汉化后编译出来的。选择<a href="http://opt.cn2qq.com/padavan/">MI-NANO_3.4.3.9-099.trx</a>这个版本，青春版专供直接在控制台选择上固件，然后点击更新，等待路由器自动重启，万事大吉！</p>
+</li>
+<li><p>修改灯光颜色<br>开机灯颜色蓝色橙色混合<br>使用下面的命令关闭橙色灯变成纯正蓝色</p>
+</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mtk_gpio</span> -d <span class="hljs-number">44</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<ol start="10">
+<li>管理路由器<br>刷入成功后，默认创建了名字为PCDN的无线网络，默认的密码为1234567890<br>后台网址为192.168.123.1，账号密码都为admin。（登录后可自行修改）<br>另外，可以配置ss，开启广告屏蔽插件等操做。</li>
+</ol>
+<p>参考文章：<br><a href="https://blog.csdn.net/qq_29109181/article/details/77727328">小米路由器青春版刷Padavan固件</a><br><a href="https://blog.csdn.net/qq_19666821/article/details/69948930">小米路由器青春版刷潘多拉、华硕固件</a><br><a href="https://www.b612.me/code/80.html">小米路由器青春版开启SSH刷入Padavan固件</a><br><a href="http://right.com.cn/forum/thread-196864-1-1.html">小米路由器青春版刷Padavan以及修改灯光颜色</a></p>
+]]></content>
+      <tags>
+        <tag>路由器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试文章</title>
+    <url>/2026/01/19/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>这是一篇测试文章，用于验证Hexo博客是否正常工作。</p>
+<h3 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h3><ol>
+<li>这是第一点测试内容</li>
+<li>这是第二点测试内容</li>
+<li>这是第三点测试内容</li>
+</ol>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">exho g -d<br></code></pre></td></tr></table></figure>
+
+<h3 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h3><p><img src="https://via.placeholder.com/150" alt="测试图片"></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>通过Hexo + Github 搭建博客</title>
+    <url>/2019/05/25/%E9%80%9A%E8%BF%87Hexo-Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<blockquote>
+<p>最近学习压力很大，想起了这个被搁置一年的博客计划，正好看到了Hexo搭建的<a href="http://frankorz.com/archives/">萤火之森</a>页面，真的很漂亮，于是决定动手自己搭建一个。这篇文章正好记录一下搭建过程中遇到的问题，方便以后学习。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="hexo-基础命令"><a href="#hexo-基础命令" class="headerlink" title="hexo 基础命令"></a>hexo 基础命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo g == hexo generate  生成<br>hexo d == hexo deploy 部署<br>hexo s == hexo server<br>hexo n == hexo new<br></code></pre></td></tr></table></figure>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="1-Github密匙只读"><a href="#1-Github密匙只读" class="headerlink" title="1. Github密匙只读"></a>1. Github密匙只读</h3><h3 id="2-hexo-s-显示4000端口不能用"><a href="#2-hexo-s-显示4000端口不能用" class="headerlink" title="2. hexo s 显示4000端口不能用"></a>2. hexo s 显示4000端口不能用</h3><p>解决方法：在Blog的根目录下，修改_config.ynl文件，在最后加上：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">server:<br>    port: <span class="hljs-number">4001</span>  #注意port前有Tab键 冒号后有空格<br>    compress: <span class="hljs-literal">true</span><br>    header: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="花费的时间"><a href="#花费的时间" class="headerlink" title="花费的时间"></a>花费的时间</h2><p>总的算下来，总共花了我四个小时左右的时间来搭建这个博客，当然，这仅仅是搭建了基础的框架，后期还需要大量的时间来美化，不过鉴于最近考试太忙，估计得延期一段时间了。</p>
+<h2 id="为什么要需要这个博客？"><a href="#为什么要需要这个博客？" class="headerlink" title="为什么要需要这个博客？"></a>为什么要需要这个博客？</h2><p>一年前，我用阿里云镜像一键搭建了基于Wordpress的个人博客，但是由于拖更，导致兴趣越来越少，最后也就不了了之了。从这段历程中，我感受到了，不是自己努力来的结果自己真是不懂得珍惜，这一个花费我一晚上心血建立的Blog，我可要好好监督自己，不要荒废了。<br>其实，挺羡慕那些能在各种论坛分享自己知识的人，帮助别人的同时也能留下自己的足迹，最重要的是，在这个过程中，能找到归属感与成就感，这就是分享的意义吧。<br>很大一部分人，写的都是技术博客，但是我知道自己现在能力有限，输出不了太多的干货，所以，现在这个阶段，更多的是记录一些学习笔记，当然，我也想穿插一些自己的心里话，写一下每个阶段的感悟。</p>
+<h2 id="搭建过程让我学到了什么"><a href="#搭建过程让我学到了什么" class="headerlink" title="搭建过程让我学到了什么"></a>搭建过程让我学到了什么</h2><p>搭建过程虽然烦琐，但我确乐在其中，兴趣是最好的老师，在搭建过程中，我看到了很多感兴趣的技术，比如GitHub的代码托管（很早以前我就注册了GitHub账号，但是一直没有项目来练习），比如Node.js，看到漂亮的网页，不眠不免对前端心生向往，再比如最近一直在学习的Linux命令行，现我已经迫不及待想要用shell自己写一个一键部署脚本了。</p>
+<h2 id="给自己立下Flag"><a href="#给自己立下Flag" class="headerlink" title="给自己立下Flag"></a>给自己立下Flag</h2><p>我的脑海里会迸发出很多新计划，但是最后很多都是不了了之，因为没有去实现，所以，在这里，我要给自己定几个目标：</p>
+<ol>
+<li>每个月至少来更新一篇博客，不管是什么类型的。</li>
+<li>尽快掌握MarkDown与法，写出排版漂亮的文章。</li>
+<li>将我的小站好好维护下去，做一些优化。</li>
+<li>开始GitHub的学习</li>
+</ol>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我觉得我很有想法，但是想到和做到之间，有一块透明的玻璃挡在我的面前，它看不见，但是它真实存在，而现在我要做的，就是想办法用行动突破它！<br>在脑海里的话语，写在纸面上就是另外一番模样，说白了，我需要练习自己的写作能力了，多年后，看到这青涩的文字，嘴角应该会有一丝微笑吧。</p>
+]]></content>
+      <categories>
+        <category>思考</category>
+      </categories>
+      <tags>
+        <tag>感悟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决Mac中Terminal无法访问github</title>
+    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
+    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
+<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
+<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
+<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># github</span><br> 140.82.113.4 www.github.com<br></code></pre></td></tr></table></figure>
+<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
+<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global http.https://github.com.proxy https://127.0.0.1:1080<br>git config --global https.https://github.com.proxy https://127.0.0.1:1080<br></code></pre></td></tr></table></figure>
+<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global --<span class="hljs-built_in">unset</span> http.proxy<br>git config --global --<span class="hljs-built_in">unset</span> https.proxy<br></code></pre></td></tr></table></figure>
+<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
+]]></content>
+      <categories>
+        <category>问题</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>对【计算机】的新理解</title>
+    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<blockquote>
+<p>开端</p>
+</blockquote>
+<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
+ <span id="more"></span>
+
+<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
+<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
+<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
+]]></content>
   </entry>
   <entry>
     <title>提问的智慧</title>
@@ -1116,119 +1274,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>小米路由器青春版刷Padavan固件</title>
-    <url>/2019/01/26/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E9%9D%92%E6%98%A5%E7%89%88%E5%88%B7Padavan%E5%9B%BA%E4%BB%B6/</url>
-    <content><![CDATA[<blockquote>
-<p>刷机是一种乐趣，大学宿舍晚上断电，正好手上有一个<strong>小米路由器青春版</strong>，USB充电宝供电，巴掌大小，放在宿舍简直合适不过了。最最最厉害的是可以刷潘多拉固件，简直不要太好！<br>（这篇文章是以前Wordpress上写的，后来荒废了，但是这篇文章留在了MWeb的文件夹里，<strong>感谢MarkDown！</strong>）</p>
-</blockquote>
-<span id="more"></span>
-
-
-<h2 id="准备："><a href="#准备：" class="headerlink" title="准备："></a>准备：</h2><ul>
-<li>小米路由器青春版 *1</li>
-<li>网线 *1</li>
-<li>电脑(Mac 或 Windows) *1</li>
-<li>刷机所需的固件，软件（Putty和WINSCP自行百度下载）</li>
-</ul>
-<hr>
-<h2 id="基本思路："><a href="#基本思路：" class="headerlink" title="基本思路："></a>基本思路：</h2><blockquote>
-<ol>
-<li>首先确保路由器ROM版本为2.0，如果不是，降级到2.0或刷入开发版miwifi_r1cl_all_59371_2.1.26.bin版本(<a href="http://bigota.miwifi.com/xiaoqiang/rom/r1cl/miwifi_r1cl_all_59371_2.1.26.bin">点击下载</a>这个开发版）</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>修改网页地址的方式来篡改web管理密码和root密码</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3">
-<li>使用telnet命令进去备份各个分区(非必须)</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4">
-<li>刷入breed</li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="5">
-<li>刷入固件（潘多拉或梅林）</li>
-</ol>
-</blockquote>
-<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><ol>
-<li><p>小米路由器青春版是没有官方通道开启ssh的，其它版本路由器可以在<a href="http://www1.miwifi.com/miwifi_open.html">miwifi开放平台</a>查看。<br>在网友的帖子里，我们可以直接修改路由器的请求地址的特定参数，改变系统参数，从而开启ssh。</p>
-<blockquote>
-<p>首先确保路由器ROM版本为2.0，如果不是，降级到2.0或刷入开发版miwifi_r1cl_all_59371_2.1.26.bin版本(<a href="http://bigota.miwifi.com/xiaoqiang/rom/r1cl/miwifi_r1cl_all_59371_2.1.26.bin">点击下载</a>这个开发版）<br>降级方法：由官方的路由管理界面，上传本ROM包，自动升级即可</p>
-</blockquote>
-</li>
-<li><p>在浏览器地址栏输入192.168.31.1，输入管理员密码（如果忘记了的话按住路由器的reset键10s以上重置系统，设置账户密码再做上面的操作），地址栏会多出一部分参数，比如我的是：</p>
-</li>
-</ol>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span><span class="hljs-number">192.168</span>.<span class="hljs-number">31.1</span><span class="hljs-regexp">/cgi-bin/</span>luci<span class="hljs-regexp">/;stok=6bb3936a88b4df625ded00d17be3911a/</span>web/home<span class="hljs-comment">#router</span><br></code></pre></td></tr></table></figure>
-<ol start="3">
-<li><p>更改管理员密码和root密码<br>将上面的地址中的 <strong>&#x2F;web&#x2F;home#router</strong> 改为 <strong>&#x2F;api&#x2F;xqsystem&#x2F;set_name_password?oldPwd&#x3D;旧密码&amp;newPwd&#x3D;新密码</strong>  ，然后确定，看网页的返回值，如果是**{“code”:0}**就表示修改成功，可以接着下一步。</p>
-</li>
-<li><p>把 <strong>&#x2F;web&#x2F;home#router</strong> 改为 <strong>&#x2F;api&#x2F;xqnetwork&#x2F;set_wifi_ap?ssid&#x3D;xiaomi&amp;encryption&#x3D;NONE&amp;enctype&#x3D;NONE&amp;channel&#x3D;1%3B%2Fusr%2Fsbin%2Ftelnetd</strong> ，然后查看返回的JSON数据 <strong>{“msg”:”未能连接到指定WiFi(Probe timeout)”,”code”:1616}</strong> ，就可以用telnet方式登录路由器。</p>
-</li>
-<li><p>用telnet方式登录路由器<br>下载一个Putty 。然后打开选填以下参数，连接类型：telnet;主机名称：192.168.31.1.点击连接。可以看到看到login，账户输入root，密码则为以上第二步中修改的新密码。然后依次执行下面的三条指令：</p>
-</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="code"><pre><code class="hljs swift">sed <span class="hljs-operator">-</span>i <span class="hljs-string">&quot;:x;N;s/if \[.*\; then<span class="hljs-subst">\n</span>.*return 0<span class="hljs-subst">\n</span>.*fi/#tb/;b x&quot;</span> <span class="hljs-regexp">/etc/</span><span class="hljs-keyword">init</span>.d<span class="hljs-operator">/</span>dropbear <br>   <span class="hljs-regexp">/etc/</span><span class="hljs-keyword">init</span>.d<span class="hljs-operator">/</span>dropbear start <br>   nvram <span class="hljs-keyword">set</span> ssh_en<span class="hljs-operator">=</span><span class="hljs-number">1</span>; nvram commit  <br></code></pre></td></tr></table></figure>
-<p>此时我们已经开放ssh，可以用ssh方式登录路由器了。</p>
-<ol start="6">
-<li>刷入breed<br>WINSCP 选择SCP协议 复制breed.bin 到&#x2F;tmp<br>输入以下命令刷入，刷入后，机器会自动重启：</li>
-</ol>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><code class="hljs gradle">mtd -r <span class="hljs-keyword">write</span> <span class="hljs-regexp">/tmp/</span>breed.bin Bootloader<br></code></pre></td></tr></table></figure>
-<ol start="7">
-<li><p>进入breed控制台<br>先给路由器断电，再按住路由器reset键，再给路由器送电，等到路由器灯闪的时候，松开reset键，用一根网线将路由器的WAN口和电脑相连，在电脑上在浏览器中输入192.168.1.1，进入breed控制台了。</p>
-</li>
-<li><p>刷入固件<br>可供选择的固件还是很多的，在这里我找了一个<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">padavan</a>,这固件是从Padavan固件源码搬运源码汉化后编译出来的。选择<a href="http://opt.cn2qq.com/padavan/">MI-NANO_3.4.3.9-099.trx</a>这个版本，青春版专供直接在控制台选择上固件，然后点击更新，等待路由器自动重启，万事大吉！</p>
-</li>
-<li><p>修改灯光颜色<br>开机灯颜色蓝色橙色混合<br>使用下面的命令关闭橙色灯变成纯正蓝色</p>
-</li>
-</ol>
-<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mtk_gpio</span> -d <span class="hljs-number">44</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-<ol start="10">
-<li>管理路由器<br>刷入成功后，默认创建了名字为PCDN的无线网络，默认的密码为1234567890<br>后台网址为192.168.123.1，账号密码都为admin。（登录后可自行修改）<br>另外，可以配置ss，开启广告屏蔽插件等操做。</li>
-</ol>
-<p>参考文章：<br><a href="https://blog.csdn.net/qq_29109181/article/details/77727328">小米路由器青春版刷Padavan固件</a><br><a href="https://blog.csdn.net/qq_19666821/article/details/69948930">小米路由器青春版刷潘多拉、华硕固件</a><br><a href="https://www.b612.me/code/80.html">小米路由器青春版开启SSH刷入Padavan固件</a><br><a href="http://right.com.cn/forum/thread-196864-1-1.html">小米路由器青春版刷Padavan以及修改灯光颜色</a></p>
-]]></content>
-      <tags>
-        <tag>路由器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>通过Hexo + Github 搭建博客</title>
-    <url>/2019/05/25/%E9%80%9A%E8%BF%87Hexo-Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<blockquote>
-<p>最近学习压力很大，想起了这个被搁置一年的博客计划，正好看到了Hexo搭建的<a href="http://frankorz.com/archives/">萤火之森</a>页面，真的很漂亮，于是决定动手自己搭建一个。这篇文章正好记录一下搭建过程中遇到的问题，方便以后学习。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="hexo-基础命令"><a href="#hexo-基础命令" class="headerlink" title="hexo 基础命令"></a>hexo 基础命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo g == hexo generate  生成<br>hexo d == hexo deploy 部署<br>hexo s == hexo server<br>hexo n == hexo new<br></code></pre></td></tr></table></figure>
-<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="1-Github密匙只读"><a href="#1-Github密匙只读" class="headerlink" title="1. Github密匙只读"></a>1. Github密匙只读</h3><h3 id="2-hexo-s-显示4000端口不能用"><a href="#2-hexo-s-显示4000端口不能用" class="headerlink" title="2. hexo s 显示4000端口不能用"></a>2. hexo s 显示4000端口不能用</h3><p>解决方法：在Blog的根目录下，修改_config.ynl文件，在最后加上：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">server:<br>    port: <span class="hljs-number">4001</span>  #注意port前有Tab键 冒号后有空格<br>    compress: <span class="hljs-literal">true</span><br>    header: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="花费的时间"><a href="#花费的时间" class="headerlink" title="花费的时间"></a>花费的时间</h2><p>总的算下来，总共花了我四个小时左右的时间来搭建这个博客，当然，这仅仅是搭建了基础的框架，后期还需要大量的时间来美化，不过鉴于最近考试太忙，估计得延期一段时间了。</p>
-<h2 id="为什么要需要这个博客？"><a href="#为什么要需要这个博客？" class="headerlink" title="为什么要需要这个博客？"></a>为什么要需要这个博客？</h2><p>一年前，我用阿里云镜像一键搭建了基于Wordpress的个人博客，但是由于拖更，导致兴趣越来越少，最后也就不了了之了。从这段历程中，我感受到了，不是自己努力来的结果自己真是不懂得珍惜，这一个花费我一晚上心血建立的Blog，我可要好好监督自己，不要荒废了。<br>其实，挺羡慕那些能在各种论坛分享自己知识的人，帮助别人的同时也能留下自己的足迹，最重要的是，在这个过程中，能找到归属感与成就感，这就是分享的意义吧。<br>很大一部分人，写的都是技术博客，但是我知道自己现在能力有限，输出不了太多的干货，所以，现在这个阶段，更多的是记录一些学习笔记，当然，我也想穿插一些自己的心里话，写一下每个阶段的感悟。</p>
-<h2 id="搭建过程让我学到了什么"><a href="#搭建过程让我学到了什么" class="headerlink" title="搭建过程让我学到了什么"></a>搭建过程让我学到了什么</h2><p>搭建过程虽然烦琐，但我确乐在其中，兴趣是最好的老师，在搭建过程中，我看到了很多感兴趣的技术，比如GitHub的代码托管（很早以前我就注册了GitHub账号，但是一直没有项目来练习），比如Node.js，看到漂亮的网页，不眠不免对前端心生向往，再比如最近一直在学习的Linux命令行，现我已经迫不及待想要用shell自己写一个一键部署脚本了。</p>
-<h2 id="给自己立下Flag"><a href="#给自己立下Flag" class="headerlink" title="给自己立下Flag"></a>给自己立下Flag</h2><p>我的脑海里会迸发出很多新计划，但是最后很多都是不了了之，因为没有去实现，所以，在这里，我要给自己定几个目标：</p>
-<ol>
-<li>每个月至少来更新一篇博客，不管是什么类型的。</li>
-<li>尽快掌握MarkDown与法，写出排版漂亮的文章。</li>
-<li>将我的小站好好维护下去，做一些优化。</li>
-<li>开始GitHub的学习</li>
-</ol>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我觉得我很有想法，但是想到和做到之间，有一块透明的玻璃挡在我的面前，它看不见，但是它真实存在，而现在我要做的，就是想办法用行动突破它！<br>在脑海里的话语，写在纸面上就是另外一番模样，说白了，我需要练习自己的写作能力了，多年后，看到这青涩的文字，嘴角应该会有一丝微笑吧。</p>
-]]></content>
-      <categories>
-        <category>思考</category>
-      </categories>
-      <tags>
-        <tag>感悟</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>那些句子</title>
     <url>/2019/09/26/%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/</url>
     <content><![CDATA[<ol>
@@ -1236,51 +1281,6 @@
 <li></li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>解决Mac中Terminal无法访问github</title>
-    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
-    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
-<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
-<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
-<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># github</span><br> 140.82.113.4 www.github.com<br></code></pre></td></tr></table></figure>
-<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
-<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global http.https://github.com.proxy https://127.0.0.1:1080<br>git config --global https.https://github.com.proxy https://127.0.0.1:1080<br></code></pre></td></tr></table></figure>
-<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global --<span class="hljs-built_in">unset</span> http.proxy<br>git config --global --<span class="hljs-built_in">unset</span> https.proxy<br></code></pre></td></tr></table></figure>
-<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
-]]></content>
-      <categories>
-        <category>问题</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2026/01/19/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>这是一篇测试文章，用于验证Hexo博客是否正常工作。</p>
-<h3 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h3><ol>
-<li>这是第一点测试内容</li>
-<li>这是第二点测试内容</li>
-<li>这是第三点测试内容</li>
-</ol>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">exho g -d<br></code></pre></td></tr></table></figure>
-
-<h3 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h3><p><img src="https://via.placeholder.com/150" alt="测试图片"></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>Hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>阿里云OSS乌龙</title>
