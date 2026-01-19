@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MarkDown语法简记</title>
+    <url>/2019/07/18/MarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0/</url>
+    <content><![CDATA[<p>常用的MarkDown语法</p>
+<span id="more"></span>
+<h2 id="初识MarkDown"><a href="#初识MarkDown" class="headerlink" title="初识MarkDown"></a>初识MarkDown</h2><p>作为一个未来的码农，越早接触这一语法越好。毕竟我是拿来来练习打字速度的（手动滑稽）。</p>
+<h2 id="列表（注意中间需要空格）"><a href="#列表（注意中间需要空格）" class="headerlink" title="列表（注意中间需要空格）"></a>列表（注意中间需要空格）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1. 这是第一点</span><br><span class="line">2. 这是第二点</span><br><span class="line">-  前面一个点</span><br></pre></td></tr></table></figure>
+<p>显示效果：</p>
+<ol>
+<li>这是第一点</li>
+<li>这是第二点</li>
+</ol>
+<ul>
+<li>前面一个点</li>
+</ul>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*斜体*</span><br><span class="line">~~删除线~~ (注意这是英文键盘下的~)</span><br><span class="line">**注意**：当需要打出*时，在前面加入\即可</span><br><span class="line">&gt;这是用来  \*演示\* 的 \_文本\_</span><br></pre></td></tr></table></figure>
+<p>效果：<br><strong>加粗</strong><br><em>斜体</em><br><del>删除线</del> (注意这是英文键盘下的~)<br><strong>注意</strong>：当需要打出*时，在前面加入\即可</p>
+<blockquote>
+<p>这是用来  *演示* 的 _文本_</p>
+</blockquote>
+<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h2><p>或者使用`代码片段&#96;</p>
+<p><code>if(a=b)</code></p>
+<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<h2 id="效果："><a href="#效果：" class="headerlink" title="效果：***"></a>效果：<br>***</h2><hr>
+<h2 id="超链接-需要用英文括号"><a href="#超链接-需要用英文括号" class="headerlink" title="超链接(需要用英文括号)"></a>超链接(需要用英文括号)</h2><p><a href="http://www.google.com/">Google</a><br><em>以下是中文括号显示效果：</em><br>[Google]（<a href="http://www.google.com/%EF%BC%89">http://www.google.com/）</a></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>插入图片的格式和插入<strong>超链接</strong>语法基本一致，只不过需要在前面加一个英文！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![GitHub](https://avatars2.githubusercontent.com/u/3265208?v=3&amp;s=100 <span class="string">&quot;GitHub,Social Coding&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://avatars2.githubusercontent.com/u/3265208?v=3&s=100" alt="GitHub" title="GitHub,Social Coding"></p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>用前后各三个点来包含多行代码，在第一个三点后面加入代码的语言就可以高亮显示关键词：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">&quot;a\n&quot;</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用  |   来分隔不同的单元格，使用 ---来分隔表头和其它行</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">name | age</span><br><span class="line">--- | ---</span><br><span class="line">LearnShare | 12</span><br><span class="line">Mike |  32</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LearnShare</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Mike</td>
+<td>32</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu16.04.4安装与优化</title>
+    <url>/2020/02/15/Ubuntu16-04-4%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>由于我的 <strong>acer</strong> 不争气，好不容易装好的系统，关机以后自检找不到系统了，所以这篇文章暂时搁置，等我有了一台能顺利跑Ubuntu的电脑再来填坑。</p>
+<span id="more"></span>
+<h3 id="没错，这篇文章就是被搁置了。-2020-02-16"><a href="#没错，这篇文章就是被搁置了。-2020-02-16" class="headerlink" title="没错，这篇文章就是被搁置了。   2020-02-16"></a>没错，这篇文章就是被搁置了。   2020-02-16</h3><p>随手放一些效果图，很Mac有没有？<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E6%A1%8C%E9%9D%A2%E6%95%88%E6%9E%9C.png"></p>
+<center>桌面效果图</center>
+
+<p>下载主题包，链接:<a href="https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ">https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ</a>  密码:a9ne,根据文档内容放入对应文件夹</p>
+<blockquote>
+<p>安装gnome-tweak-tool,然后打开tweak工具，  </p>
+</blockquote>
+<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E4%B8%BB%E9%A2%98.jpg"></p>
+<p>在安装Ubuntu的过程中，发现我的老电脑不堪重负，崩了。。。。<br>打算组装一台itx主机来装Linux</p>
+]]></content>
+  </entry>
+  <entry>
     <title>2019前端面试题总汇</title>
     <url>/2020/02/25/2019%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E6%B1%87/</url>
     <content><![CDATA[<p>#前端面试题</p>
@@ -436,78 +510,28 @@
 ]]></content>
   </entry>
   <entry>
-    <title>MarkDown语法简记</title>
-    <url>/2019/07/18/MarkDown%E8%AF%AD%E6%B3%95%E7%AE%80%E8%AE%B0/</url>
-    <content><![CDATA[<p>常用的MarkDown语法</p>
-<span id="more"></span>
-<h2 id="初识MarkDown"><a href="#初识MarkDown" class="headerlink" title="初识MarkDown"></a>初识MarkDown</h2><p>作为一个未来的码农，越早接触这一语法越好。毕竟我是拿来来练习打字速度的（手动滑稽）。</p>
-<h2 id="列表（注意中间需要空格）"><a href="#列表（注意中间需要空格）" class="headerlink" title="列表（注意中间需要空格）"></a>列表（注意中间需要空格）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1. 这是第一点</span><br><span class="line">2. 这是第二点</span><br><span class="line">-  前面一个点</span><br></pre></td></tr></table></figure>
-<p>显示效果：</p>
-<ol>
-<li>这是第一点</li>
-<li>这是第二点</li>
-</ol>
-<ul>
-<li>前面一个点</li>
-</ul>
-<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*斜体*</span><br><span class="line">~~删除线~~ (注意这是英文键盘下的~)</span><br><span class="line">**注意**：当需要打出*时，在前面加入\即可</span><br><span class="line">&gt;这是用来  \*演示\* 的 \_文本\_</span><br></pre></td></tr></table></figure>
-<p>效果：<br><strong>加粗</strong><br><em>斜体</em><br><del>删除线</del> (注意这是英文键盘下的~)<br><strong>注意</strong>：当需要打出*时，在前面加入\即可</p>
-<blockquote>
-<p>这是用来  *演示* 的 _文本_</p>
-</blockquote>
-<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h2><p>或者使用`代码片段&#96;</p>
-<p><code>if(a=b)</code></p>
-<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
-<h2 id="效果："><a href="#效果：" class="headerlink" title="效果：***"></a>效果：<br>***</h2><hr>
-<h2 id="超链接-需要用英文括号"><a href="#超链接-需要用英文括号" class="headerlink" title="超链接(需要用英文括号)"></a>超链接(需要用英文括号)</h2><p><a href="http://www.google.com/">Google</a><br><em>以下是中文括号显示效果：</em><br>[Google]（<a href="http://www.google.com/%EF%BC%89">http://www.google.com/）</a></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>插入图片的格式和插入<strong>超链接</strong>语法基本一致，只不过需要在前面加一个英文！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![GitHub](https://avatars2.githubusercontent.com/u/3265208?v=3&amp;s=100 <span class="string">&quot;GitHub,Social Coding&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://avatars2.githubusercontent.com/u/3265208?v=3&s=100" alt="GitHub" title="GitHub,Social Coding"></p>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>用前后各三个点来包含多行代码，在第一个三点后面加入代码的语言就可以高亮显示关键词：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">&quot;a\n&quot;</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用  |   来分隔不同的单元格，使用 ---来分隔表头和其它行</span><br></pre></td></tr></table></figure>
+    <title>Hello World</title>
+    <url>/2019/05/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">name | age</span><br><span class="line">--- | ---</span><br><span class="line">LearnShare | 12</span><br><span class="line">Mike |  32</span><br></pre></td></tr></table></figure>
-<p>效果：</p>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>age</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>LearnShare</td>
-<td>12</td>
-</tr>
-<tr>
-<td>Mike</td>
-<td>32</td>
-</tr>
-</tbody></table>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>思考</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
+        <tag>感悟</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu16.04.4安装与优化</title>
-    <url>/2020/02/15/Ubuntu16-04-4%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<p>由于我的 <strong>acer</strong> 不争气，好不容易装好的系统，关机以后自检找不到系统了，所以这篇文章暂时搁置，等我有了一台能顺利跑Ubuntu的电脑再来填坑。</p>
-<span id="more"></span>
-<h3 id="没错，这篇文章就是被搁置了。-2020-02-16"><a href="#没错，这篇文章就是被搁置了。-2020-02-16" class="headerlink" title="没错，这篇文章就是被搁置了。   2020-02-16"></a>没错，这篇文章就是被搁置了。   2020-02-16</h3><p>随手放一些效果图，很Mac有没有？<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E6%A1%8C%E9%9D%A2%E6%95%88%E6%9E%9C.png"></p>
-<center>桌面效果图</center>
-
-<p>下载主题包，链接:<a href="https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ">https://pan.baidu.com/s/1Y9DMaPc5JQ47TzVue7RvIQ</a>  密码:a9ne,根据文档内容放入对应文件夹</p>
-<blockquote>
-<p>安装gnome-tweak-tool,然后打开tweak工具，  </p>
-</blockquote>
-<p><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020-02-16%2F%E4%B8%BB%E9%A2%98.jpg"></p>
-<p>在安装Ubuntu的过程中，发现我的老电脑不堪重负，崩了。。。。<br>打算组装一台itx主机来装Linux</p>
-]]></content>
   </entry>
   <entry>
     <title>Mac上常用的软件&amp;插件</title>
@@ -592,30 +616,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/05/25/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>思考</category>
-      </categories>
-      <tags>
-        <tag>感悟</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用Mweb发布Hexo博客</title>
     <url>/2019/04/10/test/</url>
     <content><![CDATA[<h2 id="测试一下七牛云图床功能"><a href="#测试一下七牛云图床功能" class="headerlink" title="测试一下七牛云图床功能"></a>测试一下七牛云图床功能</h2><p><img src="http://grayblog.cn.qiniudns.com/mweb/gray.png" alt="gray"></p>
@@ -627,6 +627,20 @@
       <tags>
         <tag>test</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>对【计算机】的新理解</title>
+    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<blockquote>
+<p>开端</p>
+</blockquote>
+<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
+ <span id="more"></span>
+
+<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
+<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
+<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
+]]></content>
   </entry>
   <entry>
     <title>小米路由器青春版刷Padavan固件</title>
@@ -712,6 +726,14 @@
       </tags>
   </entry>
   <entry>
+    <title>全球IPv4地址耗尽，正式迈入IPv6时代！</title>
+    <url>/2019/11/26/%E5%85%A8%E7%90%83IPv4%E5%9C%B0%E5%9D%80%E8%80%97%E5%B0%BD%EF%BC%8C%E6%AD%A3%E5%BC%8F%E8%BF%88%E5%85%A5IPv6%E6%97%B6%E4%BB%A3%EF%BC%81/</url>
+    <content><![CDATA[<p>2019年11月25日 22:35分，是值得互联网纪念的一个时刻，全球IPv4地址已经全部耗尽！</p>
+<span id="more"></span>
+<p>IPv4中规定IP地址长度为32位二进制，最多能有2^32 个，大约42.9亿个，而IPv6采用128位地址长度，能达到2^128 个，这可是一个天文数字了，可以保证地球上每平方米分配1000多个地址。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>树莓派+HomeBridge实现HomeKit控制智能家居</title>
     <url>/2019/09/25/%E6%A0%91%E8%8E%93%E6%B4%BE+HomeBridge%E5%AE%9E%E7%8E%B0HomeKit%E6%8E%A7%E5%88%B6%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/</url>
     <content><![CDATA[<p>米家app发展的很快，短短几年，已经日趋完善，得益于其高性价比，用户也越来越多，反观HomeKit在国内的表现，也仅仅是同“<strong>电视.app</strong>“一样，躺在每个ios用户的手机里。后来，在GitHub上开源了一个<a href="https://github.com/nfarina/homebridge">HomeBridge</a>项目，通过树莓派做桥接，实现Siri控制米家智能设备。</p>
@@ -762,59 +784,6 @@
       </tags>
   </entry>
   <entry>
-    <title>全球IPv4地址耗尽，正式迈入IPv6时代！</title>
-    <url>/2019/11/26/%E5%85%A8%E7%90%83IPv4%E5%9C%B0%E5%9D%80%E8%80%97%E5%B0%BD%EF%BC%8C%E6%AD%A3%E5%BC%8F%E8%BF%88%E5%85%A5IPv6%E6%97%B6%E4%BB%A3%EF%BC%81/</url>
-    <content><![CDATA[<p>2019年11月25日 22:35分，是值得互联网纪念的一个时刻，全球IPv4地址已经全部耗尽！</p>
-<span id="more"></span>
-<p>IPv4中规定IP地址长度为32位二进制，最多能有2^32 个，大约42.9亿个，而IPv6采用128位地址长度，能达到2^128 个，这可是一个天文数字了，可以保证地球上每平方米分配1000多个地址。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>解决Mac中Terminal无法访问github</title>
-    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
-    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
-<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
-<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
-<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
-<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line"> 140.82.113.4 www.github.com</span><br></pre></td></tr></table></figure>
-<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
-<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global https.https://github.com.proxy https://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
-<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
-<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
-]]></content>
-      <categories>
-        <category>问题</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试文章</title>
-    <url>/2026/01/19/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>这是一篇测试文章，用于验证Hexo博客是否正常工作。</p>
-<h3 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h3><ol>
-<li>这是第一点测试内容</li>
-<li>这是第二点测试内容</li>
-<li>这是第三点测试内容</li>
-</ol>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">exho g -d</span><br></pre></td></tr></table></figure>
-
-<h3 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h3><p><img src="https://via.placeholder.com/150" alt="测试图片"></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通过Hexo + Github 搭建博客</title>
     <url>/2019/05/25/%E9%80%9A%E8%BF%87Hexo-Github-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<blockquote>
@@ -852,6 +821,43 @@
 <li></li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>阿里云OSS乌龙</title>
+    <url>/2019/09/27/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B9%8C%E9%BE%99/</url>
+    <content><![CDATA[<p>昨天，突然接到阿里云的短信，我前天才开的阿里云oss欠费停机了？？？<img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/imgeab4a9a03e8d1.jpeg?image/auto-orient,1/resize,p_89/quality,q_90" alt="IMG_EAB4A9A03E8D-1"></p>
+<center>停机短信</center>
+excuse me？ 我才开通一天啊喂！后来我迅速查看了使用详情，![使用明细](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/shi-yong-ming-xi.png?image/auto-orient,1/resize,p_89/quality,q_90)
+看到了**云服务器ECS-快照**的字样，我立马想到自己的ECS，是不是设置了自动快照？？因为前面的流量情况是一样的，是不是它自己一直在自动备份？？可是我查看了自己所有的服务器，并没有开快照啊。![服务器没有开通快照](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/fu-wu-qi-mei-you-kai-tong-kuai-zhao.png?image/auto-orient,1/resize,p_89/quality,q_90)
+无奈之下，我只能联系客服（不得不说阿里爸爸服务是真棒！）晚上十一点多还有在线客服也是感动了一把。最终在与客服耐心的沟通后，仍然没有找到问题所在。直到最后，我忽然想起新建bucket时候的两个条件：![](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/15695594696934.jpg?image/auto-orient,1/resize,p_89/quality,q_90)
+**存储包**和**流量包**！！！我购买的是存储包而欠费的原因竟然是流量包……这一发现让我哭笑不得，原来问题它就不出在那40G的存储包上面，而所谓的快照原来就是我已经使用的空间，最终，当我交上欠费的¥0.1以后，终于又能打开markdown图片了。
+
+<h2 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h2><p>经过这一次的事件，我越发明白了阅读官方文档的重要性，其实这些内容在官方给的QA里一般能找到，但是习惯互联网捷径的我更愿意直接google，这不失为解决方法的一种途径，但是，有时候可能官方给出的文档更加注重问题本身，更加明了，前提是你能够静下心来仔细阅读一下。包括昨天我还没有解决的GitHub密匙问题（当初搭建博客时候，把密匙配置在了graylogo&#x2F;gray.github.io仓库下，导致其他仓库push时候失败了，官方文档提供的ssh连接很详细，但可惜的是全是英文……纵使如此，一些词汇还是相对简单的，加上Google翻译，还是能看懂的。所以，啥也不说了，读文档，解决问题去吧。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>解决Mac中Terminal无法访问github</title>
+    <url>/2020/07/18/%E8%A7%A3%E5%86%B3Mac%E4%B8%ADTerminal%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub/</url>
+    <content><![CDATA[<p> 在Terminal中，<code>git clone</code> 和 <code>git push</code>无法使用，ping了一下github，发现连接不通，但是Chrome中却能打开，在此记录一下解决的办法。<br> <span id="more"></span></p>
+<h3 id="通过ping命令查看当前的github的ip地址"><a href="#通过ping命令查看当前的github的ip地址" class="headerlink" title="通过ping命令查看当前的github的ip地址"></a>通过ping命令查看当前的github的ip地址</h3><p> <img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950551780422.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<p> 如图： 可以看到地址为13.250.177.223，这是ping不通的</p>
+<h3 id="查看自己的hosts文件"><a href="#查看自己的hosts文件" class="headerlink" title="查看自己的hosts文件"></a>查看自己的hosts文件</h3><p>通过<code>cat /etc/hosts</code>命令查看host文件，查找是否有github相关的映射，比如我的映射关系就是13.250.177.223，如果没有，看下一步。</p>
+<h3 id="获取github的ip地址"><a href="#获取github的ip地址" class="headerlink" title="获取github的ip地址"></a>获取github的ip地址</h3><p>在<a href="https://www.ipaddress.com/">IPAdress</a>网站上，输入github.com查询ip地址，可以看到，当前最新的ip地址是140.82.113.4，记录这个ip地址。<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950555144253.jpg?image/auto-orient,1/resize,p_89/quality,q_90"></p>
+<h3 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h3><p>terminal打开命令：<code>sudo vi /etc/hosts</code>，输入密码，选择“e(edit anyway)”,然后添加记录：（此处涉及到vi编辑器的用法，不会用的自行百度or谷歌）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line"> 140.82.113.4 www.github.com</span><br></pre></td></tr></table></figure>
+<p>最后保存并退出，修改hosts文件保存后我自动刷新DNS，再ping就没问题啦！<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950558068128.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>可以看到连接不怎么稳定，此时就需要小飞机来帮忙了。</p>
+<h3 id="配置代理提高速度"><a href="#配置代理提高速度" class="headerlink" title="配置代理提高速度"></a>配置代理提高速度</h3><p>因为如果挂了全局代理，这样如果需要克隆coding之类的国内仓库，会奇慢无比所以我建议使用这条命令，只对github进行代理，对国内的仓库不影响</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy https://127.0.0.1:1080</span><br><span class="line">git config --global https.https://github.com.proxy https://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<p>同时，如果在输入这条命令之前，已经输入全局代理的话，可以输入进行取消</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<p>其中端口在小飞机的设置里查看，比如当前我的代理端口就是1087<br><img src="http://gray.oss-cn-beijing.aliyuncs.com/2020/07/18/15950560453819.jpg?image/auto-orient,1/resize,p_89/quality,q_90"><br>注意：这歌方法仅限于https协议下载，对于SSH协议是无效的。</p>
+]]></content>
+      <categories>
+        <category>问题</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
   </entry>
   <entry>
     <title>提问的智慧</title>
@@ -1269,30 +1275,24 @@
 ]]></content>
   </entry>
   <entry>
-    <title>阿里云OSS乌龙</title>
-    <url>/2019/09/27/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%B9%8C%E9%BE%99/</url>
-    <content><![CDATA[<p>昨天，突然接到阿里云的短信，我前天才开的阿里云oss欠费停机了？？？<img src="http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/imgeab4a9a03e8d1.jpeg?image/auto-orient,1/resize,p_89/quality,q_90" alt="IMG_EAB4A9A03E8D-1"></p>
-<center>停机短信</center>
-excuse me？ 我才开通一天啊喂！后来我迅速查看了使用详情，![使用明细](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/shi-yong-ming-xi.png?image/auto-orient,1/resize,p_89/quality,q_90)
-看到了**云服务器ECS-快照**的字样，我立马想到自己的ECS，是不是设置了自动快照？？因为前面的流量情况是一样的，是不是它自己一直在自动备份？？可是我查看了自己所有的服务器，并没有开快照啊。![服务器没有开通快照](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/fu-wu-qi-mei-you-kai-tong-kuai-zhao.png?image/auto-orient,1/resize,p_89/quality,q_90)
-无奈之下，我只能联系客服（不得不说阿里爸爸服务是真棒！）晚上十一点多还有在线客服也是感动了一把。最终在与客服耐心的沟通后，仍然没有找到问题所在。直到最后，我忽然想起新建bucket时候的两个条件：![](http://gray.oss-cn-beijing.aliyuncs.com/2019/09/27/15695594696934.jpg?image/auto-orient,1/resize,p_89/quality,q_90)
-**存储包**和**流量包**！！！我购买的是存储包而欠费的原因竟然是流量包……这一发现让我哭笑不得，原来问题它就不出在那40G的存储包上面，而所谓的快照原来就是我已经使用的空间，最终，当我交上欠费的¥0.1以后，终于又能打开markdown图片了。
+    <title>测试文章</title>
+    <url>/2026/01/19/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>这是一篇测试文章，用于验证Hexo博客是否正常工作。</p>
+<h3 id="测试内容"><a href="#测试内容" class="headerlink" title="测试内容"></a>测试内容</h3><ol>
+<li>这是第一点测试内容</li>
+<li>这是第二点测试内容</li>
+<li>这是第三点测试内容</li>
+</ol>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">exho g -d</span><br></pre></td></tr></table></figure>
 
-<h2 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h2><p>经过这一次的事件，我越发明白了阅读官方文档的重要性，其实这些内容在官方给的QA里一般能找到，但是习惯互联网捷径的我更愿意直接google，这不失为解决方法的一种途径，但是，有时候可能官方给出的文档更加注重问题本身，更加明了，前提是你能够静下心来仔细阅读一下。包括昨天我还没有解决的GitHub密匙问题（当初搭建博客时候，把密匙配置在了graylogo&#x2F;gray.github.io仓库下，导致其他仓库push时候失败了，官方文档提供的ssh连接很详细，但可惜的是全是英文……纵使如此，一些词汇还是相对简单的，加上Google翻译，还是能看懂的。所以，啥也不说了，读文档，解决问题去吧。</p>
+<h3 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h3><p><img src="https://via.placeholder.com/150" alt="测试图片"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>对【计算机】的新理解</title>
-    <url>/2021/01/17/%E5%AF%B9%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E7%9A%84%E6%96%B0%E7%90%86%E8%A7%A3/</url>
-    <content><![CDATA[<blockquote>
-<p>开端</p>
-</blockquote>
-<p>工作有一段时间了，前几天去了产线，对计算机与工业的结合有了新的感悟。</p>
- <span id="more"></span>
-
-<p>​	当我看到自己参与写的代码跑在服务器上，帮助产线上的工作人员协同生产的时候，那种震撼，是难以忘怀的。</p>
-<p>这种刺激比书本上什么“解放生产力、科技革命”之流的文字描述真实太多了。现在，突然有了一种豁然开朗的感觉，原来，这就是计算机与工业的结合。</p>
-<p>也就先写这么几句吧吗，突然发现我变得不太会说话了呢😪</p>
-]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
 </search>
